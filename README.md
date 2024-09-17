@@ -1,4 +1,4 @@
-#📊Marketing Dashboard Power BI
+# 📊Marketing Dashboard Power BI
 
 Welcome to the **Marketing Dashboard** repository created with Power BI! 
 This project aims to provide an interactive and detailed analysis of key marketing metrics to support strategic decision making.

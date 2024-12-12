@@ -91,19 +91,38 @@ In addition to the Power BI dashboard, a complete analysis has been performed us
 
 ## 📂 Project Structure
 
-- 📁 `data/`: Directory for raw and processed data.
-  - 📄 `marketing_campaign.csv`: Marketing campaign data used in the dashboard.
-- 🖼️ `images/`: Screenshots of the dashboard.
-- 📓 `notebooks/`: Jupyter notebooks with the Python analysis.
-  - 🧹 `data_cleaning.ipynb`: Notebook for data cleaning.
-  - 📊 `data_visualization.ipynb`: Notebook for data visualization.
-- 🌐 `app/`: Streamlit app to present the results.
+- 📁 `app/`: Streamlit app to present the results.
   - 📝 `main.py`: Main script for the Streamlit app.
   - 📁 `data/`: Directory for processed data.
-  - 📜 `scripts/`: Directory for additional Python scripts.
+    - 📄 `marketing_campaign_cleaned.csv`: Cleaned marketing campaign data.
   - 🖼️ `assets/`: Directory for app assets like images and logos.
-- 📊 `powerbi/`: Directory for Power BI files.
-  - 📄 `JuanEloyDuranBon.pbix`: Main file of the Power BI dashboard.
+    - 🖼️ `menu.png`: Menu image.
+    - 🖼️ `portada.png`: Cover image.
+  - 🖼️ `screenshots/`: Directory for Power BI screenshots.
+    - 🖼️ `screenshot_1.png`: Power BI screenshot 1.
+    - 🖼️ `screenshot_2.png`: Power BI screenshot 2.
+    - 🖼️ `screenshot_3.png`: Power BI screenshot 3.
+    - 🖼️ `screenshot_4.png`: Power BI screenshot 4.
+    - 🖼️ `screenshot_5.png`: Power BI screenshot 5.
+- 📁 `assets/`: Directory for app assets like images and logos.
+  - 🖼️ `menu.png`: Menu image.
+  - 🖼️ `portada.png`: Cover image.
+- 📁 `data/`: Directory for raw and processed data.
+  - 📄 `marketing_campaign.csv`: Raw marketing campaign data.
+  - 📄 `marketing_campaign_cleaned.csv`: Cleaned marketing campaign data.
+- 📁 `images/`: Directory for Power BI screenshots.
+  - 🖼️ `screenshot_1.png`: Power BI screenshot 1.
+  - 🖼️ `screenshot_2.png`: Power BI screenshot 2.
+  - 🖼️ `screenshot_3.png`: Power BI screenshot 3.
+  - 🖼️ `screenshot_4.png`: Power BI screenshot 4.
+  - 🖼️ `screenshot_5.png`: Power BI screenshot 5.
+- 📁 `notebooks/`: Jupyter notebooks with the Python analysis.
+  - 🧹 `data_cleaning.ipynb`: Notebook for data cleaning.
+  - 📊 `data_visualization.ipynb`: Notebook for data visualization.
+  - 📄 `marketing_campaign.csv`: Raw marketing campaign data.
+  - 📄 `marketing_campaign_cleaned.csv`: Cleaned marketing campaign data.
+- 📁 `powerbi/`: Directory for Power BI files.
+  - 📄 `dashboard.pbix`: Main file of the Power BI dashboard.
 - 🚫 `.gitignore`: Git ignore file.
 - 📜 `LICENSE`: License file.
 - 📄 `README.md`: Readme file.

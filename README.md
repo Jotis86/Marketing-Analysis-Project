@@ -123,7 +123,6 @@ The interactive app created with Streamlit allows exploring the analysis results
 For any questions, you can contact me at:
 - 📧 Email: jotaduranbon@gmail.com
 - 💼 LinkedIn: [Juan Duran Bon](https://www.linkedin.com/in/juan-duran-bon)
-- 🐦 Twitter: [Your Twitter Handle](https://twitter.com/yourhandle)
 
 ## 💡 Suggestions and Contributions
 

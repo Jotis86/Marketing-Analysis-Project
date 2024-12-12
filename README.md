@@ -93,17 +93,7 @@ In addition to the Power BI dashboard, a complete analysis has been performed us
 
 - 📁 `app/`: Streamlit app to present the results.
   - 📝 `main.py`: Main script for the Streamlit app.
-  - 📁 `data/`: Directory for processed data.
-    - 📄 `marketing_campaign_cleaned.csv`: Cleaned marketing campaign data.
-  - 🖼️ `assets/`: Directory for app assets like images and logos.
-    - 🖼️ `menu.png`: Menu image.
-    - 🖼️ `portada.png`: Cover image.
-  - 🖼️ `screenshots/`: Directory for Power BI screenshots.
-    - 🖼️ `screenshot_1.png`: Power BI screenshot 1.
-    - 🖼️ `screenshot_2.png`: Power BI screenshot 2.
-    - 🖼️ `screenshot_3.png`: Power BI screenshot 3.
-    - 🖼️ `screenshot_4.png`: Power BI screenshot 4.
-    - 🖼️ `screenshot_5.png`: Power BI screenshot 5.
+  - 📄 `marketing_campaign_cleaned.csv`: Cleaned marketing campaign data.
 - 📁 `assets/`: Directory for app assets like images and logos.
   - 🖼️ `menu.png`: Menu image.
   - 🖼️ `portada.png`: Cover image.

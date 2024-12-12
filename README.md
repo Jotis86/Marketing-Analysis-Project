@@ -74,12 +74,12 @@ Here are some screenshots of the Power BI dashboard:
 
 <table>
   <tr>
-    <td><img src="./images/screenshot_2.png" alt="Power BI Dashboard 1" width="200"/></td>
-    <td><img src="./images/screenshot_3.png" alt="Power BI Dashboard 2" width="200"/></td>
+    <td><img src="./images/screenshot_2.png" alt="Power BI Dashboard 1" width="400"/></td>
+    <td><img src="./images/screenshot_3.png" alt="Power BI Dashboard 2" width="400"/></td>
   </tr>
   <tr>
-    <td><img src="./images/screenshot_4.png" alt="Power BI Dashboard 3" width="200"/></td>
-    <td><img src="./images/screenshot_5.png" alt="Power BI Dashboard 4" width="200"/></td>
+    <td><img src="./images/screenshot_4.png" alt="Power BI Dashboard 3" width="400"/></td>
+    <td><img src="./images/screenshot_5.png" alt="Power BI Dashboard 4" width="400"/></td>
   </tr>
 </table>
 

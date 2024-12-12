@@ -87,18 +87,26 @@ In addition to the Power BI dashboard, a complete analysis has been performed us
 ## 🌐 Web App
 
 The interactive app created with Streamlit allows exploring the analysis results dynamically and accessibly. It includes features such as:
-- Interactive charts and graphs.
-- Filters to dynamically segment data.
-- Detailed views of key metrics and trends.
+- **Interactive charts and graphs**: Visualize data through various types of charts and graphs that update in real-time based on user interactions.
+- **Filters to dynamically segment data**: Apply filters to the data to focus on specific segments, such as time periods, product categories, or customer demographics.
+- **Detailed views of key metrics and trends**: Drill down into specific metrics to see detailed trends and insights, helping to identify patterns and opportunities.
+- **User-friendly interface**: The app is designed to be intuitive and easy to use, making it accessible to users with varying levels of technical expertise.
+- **Customizable dashboards**: Users can customize the dashboards to suit their needs, adding or removing widgets and adjusting the layout as required.
 
 ## 📧 Contact
 
-For any questions, you can contact me at jotaduranbon@gmail.com.
+For any questions, you can contact me at:
+- Email: jotaduranbon@gmail.com
+- LinkedIn: [Juan Duran Bon](https://www.linkedin.com/in/juan-duran-bon)
 
 ## 💡 Suggestions and Contributions
 
-Suggestions and contributions are welcome. Please open an issue or submit a pull request to discuss any changes you would like to make.
+Suggestions and contributions are welcome. Please open an issue or submit a pull request to discuss any changes you would like to make. Here are some ways you can contribute:
+- **Report Bugs**: If you find any bugs, please report them by opening an issue.
+- **Feature Requests**: If you have ideas for new features, feel free to suggest them.
+- **Code Contributions**: You can contribute by fixing bugs, adding new features, or improving the documentation.
+- **Feedback**: Any feedback to improve the project is highly appreciated.
 
 ## 📜 License
 
-This project is licensed under the MIT License. See the LICENSE file for more details.
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for more details.

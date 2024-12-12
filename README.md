@@ -85,9 +85,17 @@ Here are some screenshots of the Power BI dashboard:
 ## 📊 Visualizations
 
 In addition to the Power BI dashboard, a complete analysis has been performed using Python, including:
-- 🧹 Data cleaning with pandas.
-- 📊 Data visualization with matplotlib and seaborn.
-- 🌐 Interactive app with Streamlit to present the results.
+
+- 🧹 **Data Cleaning with Pandas**: 
+  - **Removing Duplicates**: Ensuring that the dataset is free from duplicate entries to maintain data integrity.
+  - **Handling Missing Values**: Addressing missing data points through imputation or removal to ensure a complete dataset.
+
+- 📊 **Data Visualization with Matplotlib and Seaborn**:
+  - **Histograms and Bar Charts**: Visualizing the distribution of data and comparing different categories.
+  - **Line Charts**: Analyzing trends over time to identify patterns and opportunities.
+  - **Scatter Plots**: Exploring relationships between different variables to uncover correlations.
+  - **Heatmaps**: Providing a visual representation of data density and relationships between variables.
+  - **Box Plots**: Summarizing the distribution of data and identifying outliers.
 
 ## 📂 Project Structure
 

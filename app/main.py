@@ -136,7 +136,8 @@ st.sidebar.title("Navigation")
 menu = st.sidebar.radio("Go to", ["Home", "Objectives", "Development Process", "Results", "Power BI", "Conclusions"])
 
 # Botón para ir al repositorio de GitHub
-st.sidebar.markdown("[GitHub Repository](https://github.com/Jotis86/Marketing-Analysis-Project)")
+if st.sidebar.button('GitHub Repository'):
+    st.sidebar.markdown("[![GitHub](https://img.shields.io/badge/GitHub-Repository-blue?logo=github)](https://github.com/Jotis86/Marketing-Analysis-Project)")
 
 # Mostrar la sección seleccionada
 if menu == "Home":

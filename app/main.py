@@ -5,8 +5,8 @@ from PIL import Image
 st.set_page_config(page_title="Marketing Analysis Project", layout="wide")
 
 # Cargar imágenes
-main_image = Image.open("assets/main_image.png")
-menu_image = Image.open("assets/menu_image.png")
+main_image = Image.open("portada.png")
+menu_image = Image.open("menu.png")
 
 # Función para mostrar la página principal
 def show_home():
@@ -63,10 +63,10 @@ def show_power_bi():
     st.write("""
     Here are some screenshots of the Power BI dashboard:
     """)
-    st.image("assets/powerbi_dashboard1.png", caption="Power BI Dashboard 1", use_column_width=True)
-    st.image("assets/powerbi_dashboard2.png", caption="Power BI Dashboard 2", use_column_width=True)
-    st.image("assets/powerbi_dashboard3.png", caption="Power BI Dashboard 3", use_column_width=True)
-    st.image("assets/powerbi_dashboard4.png", caption="Power BI Dashboard 4", use_column_width=True)
+    st.image("screenshot_2.png", caption="Power BI Dashboard 1", use_column_width=True)
+    st.image("screenshot_3.png", caption="Power BI Dashboard 2", use_column_width=True)
+    st.image("screenshot_4.png", caption="Power BI Dashboard 3", use_column_width=True)
+    st.image("screenshot_5.png", caption="Power BI Dashboard 4", use_column_width=True)
 
 # Función para mostrar la sección de conclusiones
 def show_conclusions():

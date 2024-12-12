@@ -1,12 +1,18 @@
 import streamlit as st
 from PIL import Image
+import os
 
 # Configuración de la página
 st.set_page_config(page_title="Marketing Analysis Project", layout="wide")
 
+# Obtener la ruta absoluta de la carpeta actual
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
 # Cargar imágenes
-main_image = Image.open("app/portada.png")
-menu_image = Image.open("app/menu.png")
+main_image_path = os.path.join(current_dir, "portada.png")
+menu_image_path = os.path.join(current_dir, "menu.png")
+main_image = Image.open(main_image_path)
+menu_image = Image.open(menu_image_path)
 
 # Función para mostrar la página principal
 def show_home():

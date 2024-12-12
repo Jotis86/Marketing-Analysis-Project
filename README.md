@@ -1,4 +1,4 @@
-# 📊 Marketing Dashboard Power BI and Python
+# 📊 Marketing Analysis Project
 
 ![Portada](./assets/portada.png)
 

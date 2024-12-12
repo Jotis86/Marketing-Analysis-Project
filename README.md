@@ -1,5 +1,15 @@
 # 📊 Marketing Dashboard Power BI and Python
 
+![Portada](./assets/portada.png)
+
+![Commits](https://img.shields.io/github/commit-activity/m/Jotis86/Marketing-Dashboard-PowerBI)
+![Issues Abiertas](https://img.shields.io/github/issues/Jotis86/Marketing-Dashboard-PowerBI)
+![Pull Requests](https://img.shields.io/github/issues-pr/Jotis86/Marketing-Dashboard-PowerBI)
+![Forks](https://img.shields.io/github/forks/Jotis86/Marketing-Dashboard-PowerBI)
+![Tamaño del Repositorio](https://img.shields.io/github/repo-size/Jotis86/Marketing-Dashboard-PowerBI)
+![Autor](https://img.shields.io/badge/autor-Juan%20Duran%20Bon-blue)
+![Licencia](https://img.shields.io/github/license/Jotis86/Marketing-Dashboard-PowerBI)
+
 ## 📌 Objectives
 
 The objective of this project is to provide an interactive and detailed analysis of key marketing metrics to support strategic decision-making. This includes leveraging both Power BI for interactive dashboards and Python for data analysis, cleaning, and visualization.

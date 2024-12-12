@@ -2,9 +2,6 @@ import streamlit as st
 from PIL import Image
 import os
 
-# Configuración de la página
-st.set_page_config(page_title="Marketing Analysis Project", layout="wide")
-
 # Obtener la ruta absoluta de la carpeta actual
 current_dir = os.path.dirname(os.path.abspath(__file__))
 
@@ -24,6 +21,7 @@ def show_home():
 
 # Función para mostrar la sección de objetivos
 def show_objectives():
+    st.image(main_image, use_column_width=True)
     st.title("📌 Objectives")
     st.write("""
     The objective of this project is to provide an interactive and detailed analysis of key marketing metrics to support strategic decision-making. This includes leveraging both Power BI for interactive dashboards and Python for data analysis, cleaning, and visualization.
@@ -31,6 +29,7 @@ def show_objectives():
 
 # Función para mostrar la sección de proceso de desarrollo
 def show_development_process():
+    st.image(main_image, use_column_width=True)
     st.title("🔄 Development Process")
     st.write("""
     1. **Extraction**: Data obtained from CSV files.
@@ -49,6 +48,7 @@ def show_development_process():
 
 # Función para mostrar la sección de resultados
 def show_results():
+    st.image(main_image, use_column_width=True)
     st.title("📈 Results")
     st.write("""
     Various metrics have been created using **DAX (Data Analysis Expressions)** in Power BI to provide detailed and customized analysis:
@@ -65,17 +65,20 @@ def show_results():
 
 # Función para mostrar la sección de Power BI
 def show_power_bi():
+    st.image(main_image, use_column_width=True)
     st.title("📊 Power BI Dashboard")
     st.write("""
     Here are some screenshots of the Power BI dashboard:
     """)
-    st.image("screenshot_2.png", caption="Power BI Dashboard 1", use_column_width=True)
-    st.image("screenshot_3.png", caption="Power BI Dashboard 2", use_column_width=True)
-    st.image("screenshot_4.png", caption="Power BI Dashboard 3", use_column_width=True)
-    st.image("screenshot_5.png", caption="Power BI Dashboard 4", use_column_width=True)
+    st.image(os.path.join(current_dir, "screenshot_1.png"), caption="Power BI Dashboard 1", use_column_width=True)
+    st.image(os.path.join(current_dir, "screenshot_2.png"), caption="Power BI Dashboard 2", use_column_width=True)
+    st.image(os.path.join(current_dir, "screenshot_3.png"), caption="Power BI Dashboard 3", use_column_width=True)
+    st.image(os.path.join(current_dir, "screenshot_4.png"), caption="Power BI Dashboard 4", use_column_width=True)
+    st.image(os.path.join(current_dir, "screenshot_5.png"), caption="Power BI Dashboard 5", use_column_width=True)
 
 # Función para mostrar la sección de conclusiones
 def show_conclusions():
+    st.image(main_image, use_column_width=True)
     st.title("📜 Conclusions")
     st.write("""
     The analysis provided valuable insights into key marketing metrics and customer behavior. The interactive dashboards and visualizations helped identify patterns and opportunities for strategic decision-making. The combination of Power BI and Python proved to be effective in handling and analyzing large datasets.

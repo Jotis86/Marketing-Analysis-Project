@@ -2,13 +2,14 @@
 
 ![Portada](./assets/portada.png)
 
-![Commits](https://img.shields.io/github/commit-activity/m/Jotis86/Marketing-Dashboard-PowerBI)
-![Issues Abiertas](https://img.shields.io/github/issues/Jotis86/Marketing-Dashboard-PowerBI)
-![Pull Requests](https://img.shields.io/github/issues-pr/Jotis86/Marketing-Dashboard-PowerBI)
-![Forks](https://img.shields.io/github/forks/Jotis86/Marketing-Dashboard-PowerBI)
-![Tamaño del Repositorio](https://img.shields.io/github/repo-size/Jotis86/Marketing-Dashboard-PowerBI)
+![Commits](https://img.shields.io/github/commit-activity/m/Jotis86/Marketing-Analysis-Project)
+![Issues Abiertas](https://img.shields.io/github/issues/Jotis86/Marketing-Analysis-Project)
+![Pull Requests](https://img.shields.io/github/issues-pr/Jotis86/Marketing-Analysis-Project)
+![Forks](https://img.shields.io/github/forks/Jotis86/Marketing-Analysis-Project)
+![Tamaño del Repositorio](https://img.shields.io/github/repo-size/Jotis86/Marketing-Analysis-Project)
 ![Autor](https://img.shields.io/badge/autor-Juan%20Duran%20Bon-blue)
-![Licencia](https://img.shields.io/github/license/Jotis86/Marketing-Dashboard-PowerBI)
+![Licencia](https://img.shields.io/github/license/Jotis86/Marketing-Analysis-Project)
+
 
 ## 📌 Objectives
 

@@ -162,13 +162,13 @@ def show_results():
     - 📊 **Sales Trends**: Identifying trends and patterns in sales data.
 
     ## Detailed Analysis
-    The results section provides a comprehensive analysis of the marketing data, focusing on key metrics and insights that drive strategic decision-making. By leveraging both Power BI and Python, we have created a robust framework for data analysis and visualization.
+    📊 **Results** section provides a comprehensive analysis of the marketing data, focusing on key metrics and insights that drive strategic decision-making. By leveraging both Power BI and Python, we have created a robust framework for data analysis and visualization.
 
     ### Power BI Analysis
-    Power BI has been used to create interactive dashboards that allow users to explore the data dynamically. Key metrics such as sales, channels, products, complaints, and campaign performance are analyzed to provide a holistic view of the marketing landscape.
+    🖥️ **Power BI** has been used to create interactive dashboards that allow users to explore the data dynamically. Key metrics such as sales, channels, products, complaints, and campaign performance are analyzed to provide a holistic view of the marketing landscape.
 
     ### Python Analysis
-    Python has been utilized for in-depth data cleaning and visualization. Using libraries such as pandas, matplotlib, and seaborn, we have created detailed visualizations that uncover patterns and trends in the data. The interactive Streamlit app further enhances the user experience by providing a dynamic platform to explore the results.
+    🐍 **Python** has been utilized for in-depth data cleaning and visualization. Using libraries such as pandas, matplotlib, and seaborn, we have created detailed visualizations that uncover patterns and trends in the data. The interactive Streamlit app further enhances the user experience by providing a dynamic platform to explore the results.
 
     ### Key Takeaways
     - 📊 **Data-Driven Decisions**: Leveraging data to make informed marketing decisions.

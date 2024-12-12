@@ -13,7 +13,7 @@ menu_image = Image.open(menu_image_path)
 
 # Función para mostrar la página principal
 def show_home():
-    st.image(main_image, use_column_width=True)
+    st.image(main_image, use_container_width=True)
     st.title("📊 Marketing Analysis Project")
     st.write("""
     Welcome to the Marketing Analysis Project. This application provides an interactive and detailed analysis of key marketing metrics to support strategic decision-making.
@@ -47,7 +47,7 @@ def show_home():
 
 # Función para mostrar la sección de objetivos
 def show_objectives():
-    st.image(main_image, use_column_width=True)
+    st.image(main_image, use_container_width=True)
     st.title("📌 Objectives")
     st.write("""
     The objective of this project is to provide an interactive and detailed analysis of key marketing metrics to support strategic decision-making. This includes leveraging both Power BI for interactive dashboards and Python for data analysis, cleaning, and visualization.
@@ -86,7 +86,7 @@ def show_objectives():
 
 # Función para mostrar la sección de proceso de desarrollo
 def show_development_process():
-    st.image(main_image, use_column_width=True)
+    st.image(main_image, use_container_width=True)
     st.title("🔄 Development Process")
     st.write("""
     The development process for this project involved several key steps to ensure accurate and insightful analysis.
@@ -140,7 +140,7 @@ def show_development_process():
 
 # Función para mostrar la sección de resultados
 def show_results():
-    st.image(main_image, use_column_width=True)
+    st.image(main_image, use_container_width=True)
     st.title("📈 Results")
     st.write("""
     Various metrics have been created using **DAX (Data Analysis Expressions)** in Power BI to provide detailed and customized analysis.
@@ -181,7 +181,7 @@ def show_results():
 
 # Función para mostrar la sección de Power BI
 def show_power_bi():
-    st.image(main_image, use_column_width=True)
+    st.image(main_image, use_container_width=True)
     st.title("📊 Power BI Dashboard")
     st.write("""
     This project includes:
@@ -198,15 +198,15 @@ def show_power_bi():
 
     Here are some screenshots of the Power BI dashboard:
     """)
-    st.image(os.path.join(current_dir, "screenshot_1.png"), caption="Power BI Dashboard 1", use_column_width=True)
-    st.image(os.path.join(current_dir, "screenshot_2.png"), caption="Power BI Dashboard 2", use_column_width=True)
-    st.image(os.path.join(current_dir, "screenshot_3.png"), caption="Power BI Dashboard 3", use_column_width=True)
-    st.image(os.path.join(current_dir, "screenshot_4.png"), caption="Power BI Dashboard 4", use_column_width=True)
-    st.image(os.path.join(current_dir, "screenshot_5.png"), caption="Power BI Dashboard 5", use_column_width=True)
+    st.image(os.path.join(current_dir, "screenshot_1.png"), caption="Power BI Dashboard 1", use_container_width=True)
+    st.image(os.path.join(current_dir, "screenshot_2.png"), caption="Power BI Dashboard 2", use_container_width=True)
+    st.image(os.path.join(current_dir, "screenshot_3.png"), caption="Power BI Dashboard 3", use_container_width=True)
+    st.image(os.path.join(current_dir, "screenshot_4.png"), caption="Power BI Dashboard 4", use_container_width=True)
+    st.image(os.path.join(current_dir, "screenshot_5.png"), caption="Power BI Dashboard 5", use_container_width=True)
 
 # Función para mostrar la sección de conclusiones
 def show_conclusions():
-    st.image(main_image, use_column_width=True)
+    st.image(main_image, use_container_width=True)
     st.title("📜 Conclusions")
     st.write("""
     The analysis provided valuable insights into key marketing metrics and customer behavior. The interactive dashboards and visualizations helped identify patterns and opportunities for strategic decision-making. The combination of Power BI and Python proved to be effective in handling and analyzing large datasets.
@@ -244,7 +244,7 @@ def show_conclusions():
     """)
 
 # Menú de navegación
-st.sidebar.image(menu_image, use_column_width=True)
+st.sidebar.image(menu_image, use_container_width=True)
 st.sidebar.title("Navigation")
 menu = st.sidebar.radio("Go to", ["Home", "Objectives", "Development Process", "Results", "Power BI", "Conclusions"])
 

@@ -5,8 +5,8 @@ from PIL import Image
 st.set_page_config(page_title="Marketing Analysis Project", layout="wide")
 
 # Cargar imágenes
-main_image = Image.open("portada.png")
-menu_image = Image.open("menu.png")
+main_image = Image.open("app/portada.png")
+menu_image = Image.open("app/menu.png")
 
 # Función para mostrar la página principal
 def show_home():

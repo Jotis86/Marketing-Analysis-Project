@@ -68,6 +68,21 @@ In Python, the analysis includes:
 - Creation of visualizations to explore and present data insights.
 - Development of an interactive Streamlit app to dynamically explore the results.
 
+## 📊 Power BI Dashboard
+
+Here are some screenshots of the Power BI dashboard:
+
+<table>
+  <tr>
+    <td><img src="./images/screenshot_2.png" alt="Power BI Dashboard 1" width="200"/></td>
+    <td><img src="./images/screenshot_3.png" alt="Power BI Dashboard 2" width="200"/></td>
+  </tr>
+  <tr>
+    <td><img src="./images/screenshot_4.png" alt="Power BI Dashboard 3" width="200"/></td>
+    <td><img src="./images/screenshot_5.png" alt="Power BI Dashboard 4" width="200"/></td>
+  </tr>
+</table>
+
 ## 📊 Visualizations
 
 In addition to the Power BI dashboard, a complete analysis has been performed using Python, including:

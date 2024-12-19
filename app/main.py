@@ -204,6 +204,10 @@ def show_power_bi():
     st.image(os.path.join(current_dir, "screenshot_4.png"), caption="Power BI Dashboard 4", use_container_width=True)
     st.image(os.path.join(current_dir, "screenshot_5.png"), caption="Power BI Dashboard 5", use_container_width=True)
 
+    # Añadir el video clip
+    st.write("Here is a video demonstration of the Power BI dashboard:")
+    st.video(os.path.join(current_dir, "clip.mp4"))
+
 # Función para mostrar la sección de conclusiones
 def show_conclusions():
     st.image(main_image, use_container_width=True)

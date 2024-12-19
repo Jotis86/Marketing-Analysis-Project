@@ -198,11 +198,15 @@ def show_power_bi():
 
     Here are some screenshots of the Power BI dashboard:
     """)
-    st.image(os.path.join(current_dir, "screenshot_1.png"), caption="Power BI Dashboard 1", use_container_width=True)
-    st.image(os.path.join(current_dir, "screenshot_2.png"), caption="Power BI Dashboard 2", use_container_width=True)
-    st.image(os.path.join(current_dir, "screenshot_3.png"), caption="Power BI Dashboard 3", use_container_width=True)
-    st.image(os.path.join(current_dir, "screenshot_4.png"), caption="Power BI Dashboard 4", use_container_width=True)
-    st.image(os.path.join(current_dir, "screenshot_5.png"), caption="Power BI Dashboard 5", use_container_width=True)
+    # Organizar las capturas de pantalla en un tablero
+    col1, col2 = st.columns(2)
+    with col1:
+        st.image(os.path.join(current_dir, "screenshot_1.png"), caption="Power BI Dashboard 1", use_container_width=True)
+        st.image(os.path.join(current_dir, "screenshot_3.png"), caption="Power BI Dashboard 3", use_container_width=True)
+        st.image(os.path.join(current_dir, "screenshot_5.png"), caption="Power BI Dashboard 5", use_container_width=True)
+    with col2:
+        st.image(os.path.join(current_dir, "screenshot_2.png"), caption="Power BI Dashboard 2", use_container_width=True)
+        st.image(os.path.join(current_dir, "screenshot_4.png"), caption="Power BI Dashboard 4", use_container_width=True)
 
     # Añadir el video clip
     st.write("Here is a video demonstration of the Power BI dashboard:")

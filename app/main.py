@@ -19,6 +19,7 @@ def load_css():
         /* Main container styling */
         .main {
             background-color: #f5f7fa;
+            color: #333333; /* Ensure dark text on light background */
         }
         
         /* Banner styling */
@@ -34,6 +35,7 @@ def load_css():
             padding: 20px;
             margin-bottom: 20px;
             background-color: white;
+            color: #333333; /* Ensure dark text on white background */
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
@@ -57,6 +59,7 @@ def load_css():
         .feature-list {
             list-style-type: none;
             padding-left: 0;
+            color: #333333; /* Ensure dark text */
         }
         
         .feature-item {
@@ -64,6 +67,7 @@ def load_css():
             padding: 10px;
             border-radius: 5px;
             background-color: #f8f9fa;
+            color: #333333; /* Ensure dark text on light background */
             display: flex;
             align-items: center;
         }
@@ -88,7 +92,7 @@ def load_css():
         /* Metric card styling */
         .metric-card {
             background-color: #3498db;
-            color: white;
+            color: white !important; /* Force white text on blue background */
             border-radius: 10px;
             padding: 15px;
             text-align: center;
@@ -99,10 +103,12 @@ def load_css():
             font-size: 2rem;
             font-weight: 700;
             margin-bottom: 5px;
+            color: white !important; /* Ensure white text */
         }
         
         .metric-label {
             font-size: 1rem;
+            color: white !important; /* Ensure white text */
             opacity: 0.8;
         }
         
@@ -128,13 +134,27 @@ def load_css():
         /* Sidebar styling */
         .sidebar .sidebar-content {
             background-color: #2c3e50;
-            color: white;
+            color: white !important; /* Force white text in sidebar */
+        }
+        
+        /* Link styling for better visibility */
+        a {
+            color: #3498db; /* Blue links on light backgrounds */
+        }
+        
+        .sidebar a {
+            color: #3498db !important; /* Force blue links in sidebar */
+        }
+        
+        /* Footer in sidebar needs light text */
+        .sidebar-footer {
+            color: white !important; /* Force white text in sidebar footer */
         }
         
         /* Button styling */
         .custom-button {
             background-color: #3498db;
-            color: white;
+            color: white !important; /* Force white text on buttons */
             padding: 10px 20px;
             border-radius: 5px;
             text-decoration: none;
@@ -153,6 +173,7 @@ def load_css():
             position: relative;
             margin: 20px 0;
             padding-left: 30px;
+            color: #333333; /* Ensure dark text */
         }
         
         .timeline:before {
@@ -169,6 +190,7 @@ def load_css():
             position: relative;
             margin-bottom: 20px;
             padding-left: 20px;
+            color: #333333; /* Ensure dark text */
         }
         
         .timeline-item:before {
@@ -686,9 +708,9 @@ with st.sidebar:
     
     # Información de contacto
     st.markdown("""
-    <div style="margin-top: 50px; text-align: center; font-size: 0.8rem; color: #333333;">
+    <div class="sidebar-footer" style="margin-top: 50px; text-align: center; font-size: 0.8rem;">
         <p>© 2023 Marketing Analysis Project</p>
-        <p><a href="mailto:contact@example.com" style="color: #3498db;">contact@example.com</a></p>
+        <p><a href="mailto:contact@example.com" style="color: #5dade2;">contact@example.com</a></p>
     </div>
     """, unsafe_allow_html=True)
 

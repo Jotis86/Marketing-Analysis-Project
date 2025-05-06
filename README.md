@@ -1,6 +1,6 @@
 # 📊 Marketing Analysis Project
 
-![Portada](./assets/portada.png)
+![Portada](./assets/banner.png)
 
 ![Commits](https://img.shields.io/github/commit-activity/m/Jotis86/Marketing-Analysis-Project)
 ![Issues Abiertas](https://img.shields.io/github/issues/Jotis86/Marketing-Analysis-Project)

@@ -444,33 +444,35 @@ def show_power_bi():
     
     # Brief description
     description = """
-    <p>Interactive Power BI dashboards provide comprehensive analysis of key marketing metrics.</p>
+    <p style="color: #333333;">Interactive Power BI dashboards provide comprehensive analysis of key marketing metrics.</p>
     """
     st.markdown(create_container("Overview", description), unsafe_allow_html=True)
     
-    # Dashboard features and video demo
-    col1, col2 = st.columns(2)
+    # Dashboard features in full width
+    dashboard_features = [
+        create_feature("📈", "Interactive Visualizations", "Pivot charts and dynamic tables"),
+        create_feature("📊", "Key Metrics", "Sales, channels, products, and campaign KPIs"),
+        create_feature("📅", "Temporal Analysis", "Trends and patterns over time"),
+        create_feature("🗂️", "Multiple Tabs", "Global, Orders, Products, Campaigns, Customers")
+    ]
+    features_content = "".join(dashboard_features)
+    st.markdown(create_container("Dashboard Features", features_content), unsafe_allow_html=True)
     
-    with col1:
-        dashboard_features = [
-            create_feature("📈", "Interactive Visualizations", "Pivot charts and dynamic tables"),
-            create_feature("📊", "Key Metrics", "Sales, channels, products, and campaign KPIs"),
-            create_feature("📅", "Temporal Analysis", "Trends and patterns over time"),
-            create_feature("🗂️", "Multiple Tabs", "Global, Orders, Products, Campaigns, Customers")
-        ]
-        features_content = "".join(dashboard_features)
-        st.markdown(create_container("Dashboard Features", features_content), unsafe_allow_html=True)
+    # Video demo in full width
+    st.markdown("<h2 style='color: #1E88E5; text-align: center; margin-top: 20px;'>Dashboard Demo</h2>", 
+                unsafe_allow_html=True)
     
-    with col2:
-        # Video demo
-        video_file = os.path.join(current_dir, "clip.mp4")
-        if os.path.exists(video_file):
-            st.video(video_file)
+    video_file = os.path.join(current_dir, "clip.mp4")
+    if os.path.exists(video_file):
+        st.video(video_file)
+    else:
+        st.warning("Demo video not found. Please add a 'clip.mp4' file to your application directory.")
     
     # Dashboard screenshots
-    st.markdown("<h2 style='color: #1E88E5; text-align: center;'>Dashboard Gallery</h2>", unsafe_allow_html=True)
+    st.markdown("<h2 style='color: #1E88E5; text-align: center; margin-top: 30px;'>Dashboard Gallery</h2>", 
+                unsafe_allow_html=True)
     
-    # Simple gallery with 2 columns
+    # Keep the gallery with 2 columns
     col1, col2 = st.columns(2)
     
     screenshots = [
@@ -494,6 +496,9 @@ def show_power_bi():
                     </div>
                 </div>
                 """, unsafe_allow_html=True)
+        else:
+            with col1 if i % 2 == 0 else col2:
+                st.info(f"Screenshot '{screenshot['path']}' not found.")
 
 # Conclusions page
 def show_conclusions():

@@ -151,8 +151,8 @@ sidebar_logo = Image.open(sidebar_logo_path)
 # Helper functions
 def create_container(title, content):
     return f"""
-    <div class="container">
-        <div class="header">{title}</div>
+    <div class="container" style="background-color: white; color: #333333;">
+        <div class="header" style="color: #1E88E5;">{title}</div>
         {content}
     </div>
     """
@@ -194,7 +194,7 @@ def show_home():
     
     # Introduction
     intro_content = """
-    <p style='font-size: 16px; margin-bottom: 20px;'>
+    <p style='font-size: 16px; margin-bottom: 20px; color: #333333;'>
         An interactive marketing analytics dashboard combining Power BI and Python for data-driven insights.
     </p>
     """
@@ -257,7 +257,9 @@ def show_objectives():
     
     # Brief overview
     overview = """
-    <p>This dashboard provides interactive marketing metrics analysis to support data-driven decision-making.</p>
+    <p style='color: #333333; font-size: 16px;'>
+        This dashboard provides interactive marketing metrics analysis to support data-driven decision-making.
+    </p>
     """
     st.markdown(create_container("Overview", overview), unsafe_allow_html=True)
     

@@ -686,9 +686,9 @@ with st.sidebar:
     
     # Información de contacto
     st.markdown("""
-    <div style="position: absolute; bottom: 20px; left: 20px; right: 20px; text-align: center; font-size: 0.8rem; opacity: 0.8;">
+    <div style="margin-top: 50px; text-align: center; font-size: 0.8rem; color: #333333;">
         <p>© 2023 Marketing Analysis Project</p>
-        <p><a href="mailto:contact@example.com" style="color: inherit;">contact@example.com</a></p>
+        <p><a href="mailto:contact@example.com" style="color: #3498db;">contact@example.com</a></p>
     </div>
     """, unsafe_allow_html=True)
 

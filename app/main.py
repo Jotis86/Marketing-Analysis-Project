@@ -318,13 +318,83 @@ def show_development_process():
         st.markdown(create_container("Tools & Technologies", tools_content), unsafe_allow_html=True)
     
     with col2:
-        # Fixed ETL Process section with explicit styling
+        # Completely redesigned ETL Process section with clear visibility
+        etl_process = """
+        <div style="background-color: #f0f5ff; border-radius: 8px; padding: 15px; border-left: 4px solid #1E88E5;">
+            <h3 style="color: #1E88E5; margin-top: 0;">ETL Process Overview</h3>
+            
+            <div style="display: flex; align-items: center; margin: 15px 0; background-color: white; padding: 10px; border-radius: 6px;">
+                <div style="flex: 0 0 50px; text-align: center; font-size: 24px;">📥</div>
+                <div style="flex: 1;">
+                    <div style="font-weight: bold; color: #1E88E5;">Extract</div>
+                    <div style="color: #333;">Data collection from multiple sources including CRM, website analytics, and sales platforms</div>
+                </div>
+            </div>
+            
+            <div style="display: flex; align-items: center; margin: 15px 0; background-color: white; padding: 10px; border-radius: 6px;">
+                <div style="flex: 0 0 50px; text-align: center; font-size: 24px;">🔄</div>
+                <div style="flex: 1;">
+                    <div style="font-weight: bold; color: #1E88E5;">Transform</div>
+                    <div style="color: #333;">Data cleaning, normalization, enrichment, and preparation for analysis</div>
+                </div>
+            </div>
+            
+            <div style="display: flex; align-items: center; margin: 15px 0; background-color: white; padding: 10px; border-radius: 6px;">
+                <div style="flex: 0 0 50px; text-align: center; font-size: 24px;">📤</div>
+                <div style="flex: 1;">
+                    <div style="font-weight: bold; color: #1E88E5;">Load</div>
+                    <div style="color: #333;">Integration into Power BI and other analysis platforms for visualization</div>
+                </div>
+            </div>
+        </div>
+        """
+        st.markdown(etl_process, unsafe_allow_html=True)
+    
+    # Add a simple ETL diagram using columns
+    st.markdown("<h2 style='color: #1E88E5; text-align: center; margin-top: 30px;'>ETL Workflow</h2>", 
+                unsafe_allow_html=True)
+    
+    col1, col2, col3 = st.columns(3)
+    
+    with col1:
         st.markdown("""
-        <div class="container">
-            <div class="header">ETL Process</div>
-            <p style="color: #333; margin-bottom: 10px;">Extract, Transform, Load process for data preparation</p>
-            <img src="https://miro.medium.com/max/1400/1*L_QoAG863l-SUBSYvL_j8A.png" 
-                 style="width:100%; border-radius:5px;">
+        <div style="text-align: center; padding: 20px; background-color: #e3f2fd; border-radius: 8px; height: 100%;">
+            <div style="font-size: 36px; margin-bottom: 10px;">📥</div>
+            <div style="font-weight: bold; color: #1E88E5; font-size: 20px;">Extract</div>
+            <ul style="text-align: left; color: #333; margin-top: 15px;">
+                <li>CSV data files</li>
+                <li>API connections</li>
+                <li>Database queries</li>
+                <li>Web scraping</li>
+            </ul>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    with col2:
+        st.markdown("""
+        <div style="text-align: center; padding: 20px; background-color: #e8f5e9; border-radius: 8px; height: 100%;">
+            <div style="font-size: 36px; margin-bottom: 10px;">🔄</div>
+            <div style="font-weight: bold; color: #43a047; font-size: 20px;">Transform</div>
+            <ul style="text-align: left; color: #333; margin-top: 15px;">
+                <li>Data cleaning</li>
+                <li>Feature engineering</li>
+                <li>Normalization</li>
+                <li>Aggregation</li>
+            </ul>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    with col3:
+        st.markdown("""
+        <div style="text-align: center; padding: 20px; background-color: #fff8e1; border-radius: 8px; height: 100%;">
+            <div style="font-size: 36px; margin-bottom: 10px;">📤</div>
+            <div style="font-weight: bold; color: #ff8f00; font-size: 20px;">Load</div>
+            <ul style="text-align: left; color: #333; margin-top: 15px;">
+                <li>Power BI datasets</li>
+                <li>Visualization models</li>
+                <li>Interactive dashboards</li>
+                <li>Reporting databases</li>
+            </ul>
         </div>
         """, unsafe_allow_html=True)
 

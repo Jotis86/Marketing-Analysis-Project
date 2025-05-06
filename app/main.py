@@ -392,40 +392,57 @@ def show_results():
         with col:
             st.markdown(metric, unsafe_allow_html=True)
     
-    # Analysis highlights - Fixed with explicit styling
+    # Analysis highlights - Without the problematic images
     col1, col2 = st.columns(2)
     
     with col1:
         st.markdown("""
-        <div class="container">
-            <div class="header">Customer Insights</div>
+        <div class="container" style="background-color: white; color: #333333;">
+            <div class="header" style="color: #1E88E5;">Customer Insights</div>
             <ul style="color: #333; padding-left: 20px;">
                 <li><strong>Behavior Analysis:</strong> Understanding customer purchase patterns</li>
                 <li><strong>Segmentation:</strong> Identification of key customer segments</li>
                 <li><strong>Lifetime Value:</strong> Calculation of customer lifetime value</li>
+                <li><strong>Purchase Frequency:</strong> Analysis of repeat purchase behavior</li>
+                <li><strong>Customer Journey:</strong> Mapping touchpoints and interactions</li>
             </ul>
-            <div style="text-align:center; margin-top:15px;">
-                <img src="https://www.datapine.com/blog/wp-content/uploads/2019/05/customer-analytics-dashboard-2.png" 
-                     style="max-width:100%; border-radius:5px;">
-            </div>
         </div>
         """, unsafe_allow_html=True)
     
     with col2:
         st.markdown("""
-        <div class="container">
-            <div class="header">Marketing Performance</div>
+        <div class="container" style="background-color: white; color: #333333;">
+            <div class="header" style="color: #1E88E5;">Marketing Performance</div>
             <ul style="color: #333; padding-left: 20px;">
                 <li><strong>Campaign Effectiveness:</strong> ROI and conversion analysis</li>
                 <li><strong>Channel Performance:</strong> Evaluation of marketing channels</li>
                 <li><strong>Content Engagement:</strong> Analysis of content effectiveness</li>
+                <li><strong>Budget Allocation:</strong> Optimization of marketing spend</li>
+                <li><strong>Conversion Rates:</strong> Analysis of the sales funnel</li>
             </ul>
-            <div style="text-align:center; margin-top:15px;">
-                <img src="https://www.datapine.com/blog/wp-content/uploads/2019/05/marketing-performance-dashboard.png" 
-                     style="max-width:100%; border-radius:5px;">
-            </div>
         </div>
         """, unsafe_allow_html=True)
+    
+    # Add a summary section
+    st.markdown("""
+    <div class="container" style="background-color: white; color: #333333; margin-top: 20px;">
+        <div class="header" style="color: #1E88E5;">Key Takeaways</div>
+        <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-top: 15px;">
+            <div style="flex: 1; min-width: 200px; padding: 15px; background-color: #f7f9fc; border-radius: 6px; color: #333333;">
+                <div style="font-weight: 600; color: #1E88E5; margin-bottom: 5px;">Data-Driven Decisions</div>
+                <div>Marketing strategies informed by comprehensive data analysis</div>
+            </div>
+            <div style="flex: 1; min-width: 200px; padding: 15px; background-color: #f7f9fc; border-radius: 6px; color: #333333;">
+                <div style="font-weight: 600; color: #1E88E5; margin-bottom: 5px;">Customer Understanding</div>
+                <div>Better targeting and engagement through segmentation</div>
+            </div>
+            <div style="flex: 1; min-width: 200px; padding: 15px; background-color: #f7f9fc; border-radius: 6px; color: #333333;">
+                <div style="font-weight: 600; color: #1E88E5; margin-bottom: 5px;">Optimization</div>
+                <div>Enhanced performance through continuous improvement</div>
+            </div>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
 
 # Power BI page
 def show_power_bi():

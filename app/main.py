@@ -378,54 +378,6 @@ def show_development_process():
             </ul>
         </div>
         """, unsafe_allow_html=True)
-    
-    # Add a simple ETL diagram using columns
-    st.markdown("<h2 style='color: #1E88E5; text-align: center; margin-top: 30px;'>ETL Workflow</h2>", 
-                unsafe_allow_html=True)
-    
-    col1, col2, col3 = st.columns(3)
-    
-    with col1:
-        st.markdown("""
-        <div style="text-align: center; padding: 20px; background-color: #e3f2fd; border-radius: 8px; height: 100%;">
-            <div style="font-size: 36px; margin-bottom: 10px;">📥</div>
-            <div style="font-weight: bold; color: #1E88E5; font-size: 20px;">Extract</div>
-            <ul style="text-align: left; color: #333; margin-top: 15px;">
-                <li>CSV data files</li>
-                <li>API connections</li>
-                <li>Database queries</li>
-                <li>Web scraping</li>
-            </ul>
-        </div>
-        """, unsafe_allow_html=True)
-    
-    with col2:
-        st.markdown("""
-        <div style="text-align: center; padding: 20px; background-color: #e8f5e9; border-radius: 8px; height: 100%;">
-            <div style="font-size: 36px; margin-bottom: 10px;">🔄</div>
-            <div style="font-weight: bold; color: #43a047; font-size: 20px;">Transform</div>
-            <ul style="text-align: left; color: #333; margin-top: 15px;">
-                <li>Data cleaning</li>
-                <li>Feature engineering</li>
-                <li>Normalization</li>
-                <li>Aggregation</li>
-            </ul>
-        </div>
-        """, unsafe_allow_html=True)
-    
-    with col3:
-        st.markdown("""
-        <div style="text-align: center; padding: 20px; background-color: #fff8e1; border-radius: 8px; height: 100%;">
-            <div style="font-size: 36px; margin-bottom: 10px;">📤</div>
-            <div style="font-weight: bold; color: #ff8f00; font-size: 20px;">Load</div>
-            <ul style="text-align: left; color: #333; margin-top: 15px;">
-                <li>Power BI datasets</li>
-                <li>Visualization models</li>
-                <li>Interactive dashboards</li>
-                <li>Reporting databases</li>
-            </ul>
-        </div>
-        """, unsafe_allow_html=True)
 
 # Results page
 def show_results():

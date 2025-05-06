@@ -12,207 +12,127 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Load and apply custom CSS
+# Load and apply simplified CSS
 def load_css():
     css = """
     <style>
-        /* Main container styling */
-        .main {
-            background-color: #f5f7fa;
-            color: #333333; /* Ensure dark text on light background */
+        /* Global styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
         }
         
-        /* Banner styling */
-        .banner {
-            padding: 0;
-            margin: 0;
-            width: 100%;
-        }
-        
-        /* Card styling */
-        .card {
-            border-radius: 10px;
+        /* Clean container styling */
+        .container {
+            background-color: white;
+            border-radius: 8px;
             padding: 20px;
             margin-bottom: 20px;
-            background-color: white;
-            color: #333333; /* Ensure dark text on white background */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #eaeaea;
         }
         
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        /* Card header styling */
-        .card-header {
-            font-size: 1.5rem;
+        /* Simple header styling */
+        .header {
+            color: #1E88E5;
+            font-size: 24px;
             font-weight: 600;
-            margin-bottom: 10px;
-            color: #2c3e50;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #1E88E5;
+            padding-bottom: 8px;
         }
         
-        /* Feature list styling */
-        .feature-list {
-            list-style-type: none;
-            padding-left: 0;
-            color: #333333; /* Ensure dark text */
-        }
-        
-        .feature-item {
-            margin-bottom: 10px;
-            padding: 10px;
-            border-radius: 5px;
-            background-color: #f8f9fa;
-            color: #333333; /* Ensure dark text on light background */
+        /* Feature list */
+        .feature {
             display: flex;
             align-items: center;
+            margin-bottom: 12px;
+            background-color: #f7f9fc;
+            padding: 10px 15px;
+            border-radius: 6px;
         }
         
         .feature-icon {
-            margin-right: 10px;
-            font-size: 1.2rem;
+            margin-right: 12px;
+            font-size: 18px;
+            color: #1E88E5;
         }
         
-        /* Section title styling */
-        .section-title {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #2c3e50;
-            margin-bottom: 20px;
+        .feature-text {
+            color: #333;
+        }
+        
+        /* Simple metric box */
+        .metric {
+            background-color: #1E88E5;
+            color: white;
             text-align: center;
-            background: linear-gradient(90deg, #3498db, #2c3e50);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        /* Metric card styling */
-        .metric-card {
-            background-color: #3498db;
-            color: white !important; /* Force white text on blue background */
-            border-radius: 10px;
             padding: 15px;
-            text-align: center;
-            margin-bottom: 10px;
+            border-radius: 8px;
+            margin-bottom: 15px;
         }
         
         .metric-value {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 5px;
-            color: white !important; /* Ensure white text */
+            font-size: 24px;
+            font-weight: bold;
         }
         
         .metric-label {
-            font-size: 1rem;
-            color: white !important; /* Ensure white text */
-            opacity: 0.8;
-        }
-        
-        /* Custom image gallery */
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-        }
-        
-        .gallery-item {
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-        
-        .gallery-item:hover {
-            transform: scale(1.05);
-        }
-        
-        /* Sidebar styling */
-        .sidebar .sidebar-content {
-            background-color: #2c3e50;
-            color: white !important; /* Force white text in sidebar */
-        }
-        
-        /* Link styling for better visibility */
-        a {
-            color: #3498db; /* Blue links on light backgrounds */
-        }
-        
-        .sidebar a {
-            color: #3498db !important; /* Force blue links in sidebar */
-        }
-        
-        /* Footer in sidebar needs light text */
-        .sidebar-footer {
-            color: white !important; /* Force white text in sidebar footer */
+            margin-top: 5px;
+            font-size: 14px;
+            opacity: 0.9;
         }
         
         /* Button styling */
-        .custom-button {
-            background-color: #3498db;
-            color: white !important; /* Force white text on buttons */
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
+        .button {
             display: inline-block;
+            background-color: #1E88E5;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
             margin-top: 10px;
-            transition: background-color 0.3s ease;
         }
         
-        .custom-button:hover {
-            background-color: #2980b9;
+        /* Timeline */
+        .step {
+            padding: 15px;
+            background-color: #f7f9fc;
+            border-left: 3px solid #1E88E5;
+            margin-bottom: 15px;
         }
         
-        /* Timeline styling */
-        .timeline {
-            position: relative;
-            margin: 20px 0;
-            padding-left: 30px;
-            color: #333333; /* Ensure dark text */
+        .step-title {
+            font-weight: 600;
+            color: #1E88E5;
+            margin-bottom: 5px;
         }
         
-        .timeline:before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            height: 100%;
-            width: 2px;
-            background-color: #3498db;
+        /* Image gallery */
+        .image-container {
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #eaeaea;
+            margin-bottom: 15px;
         }
         
-        .timeline-item {
-            position: relative;
-            margin-bottom: 20px;
-            padding-left: 20px;
-            color: #333333; /* Ensure dark text */
+        /* Menu styling */
+        .menu-item {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-bottom: 5px;
         }
         
-        .timeline-item:before {
-            content: '';
-            position: absolute;
-            left: -30px;
-            top: 5px;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background-color: #3498db;
-            border: 2px solid white;
+        .menu-item:hover {
+            background-color: rgba(255, 255, 255, 0.1);
         }
         
-        /* Fade-in animation */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .fade-in {
-            animation: fadeIn 0.6s ease-out forwards;
+        .menu-icon {
+            margin-right: 10px;
         }
     </style>
     """
@@ -220,461 +140,382 @@ def load_css():
 
 load_css()
 
-# Obtener la ruta absoluta de la carpeta actual
+# Load images
 current_dir = os.path.dirname(os.path.abspath(__file__))
-
-# Cargar las imágenes
 main_banner_path = os.path.join(current_dir, "portada.png")
 sidebar_logo_path = os.path.join(current_dir, "menu.png")
 
 main_banner = Image.open(main_banner_path)
 sidebar_logo = Image.open(sidebar_logo_path)
 
-# Helper functions for visual components
-def create_card(title, content, icon=""):
+# Helper functions
+def create_container(title, content):
     return f"""
-    <div class="card fade-in">
-        <div class="card-header">{icon} {title}</div>
+    <div class="container">
+        <div class="header">{title}</div>
         {content}
     </div>
     """
 
-def create_feature_list(features):
-    items = ""
-    for icon, text in features:
-        items += f'<li class="feature-item"><span class="feature-icon">{icon}</span> {text}</li>'
-    return f'<ul class="feature-list">{items}</ul>'
+def create_feature(icon, title, description):
+    return f"""
+    <div class="feature">
+        <div class="feature-icon">{icon}</div>
+        <div class="feature-text">
+            <strong>{title}</strong> - {description}
+        </div>
+    </div>
+    """
 
-# Función para mostrar la página principal
+def create_metric(icon, value, label):
+    return f"""
+    <div class="metric">
+        <div class="metric-value">{icon}</div>
+        <div class="metric-label">{value}</div>
+        <div>{label}</div>
+    </div>
+    """
+
+def create_step(title, description):
+    return f"""
+    <div class="step">
+        <div class="step-title">{title}</div>
+        <div>{description}</div>
+    </div>
+    """
+
+# Home page
 def show_home():
-    # Banner principal
-    st.image(main_banner, use_container_width=True, output_format="PNG")
+    # Banner and title
+    st.image(main_banner, use_container_width=True)
     
-    # Título principal con estilo
-    st.markdown('<div class="section-title fade-in">Marketing Analysis Project</div>', unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center; color: #1E88E5;'>Marketing Analysis Project</h1>", 
+                unsafe_allow_html=True)
     
-    # Descripción breve
-    col1, col2 = st.columns([2, 1])
+    # Introduction
+    intro_content = """
+    <p style='font-size: 16px; margin-bottom: 20px;'>
+        An interactive marketing analytics dashboard combining Power BI and Python for data-driven insights.
+    </p>
+    """
+    st.markdown(create_container("Welcome", intro_content), unsafe_allow_html=True)
+    
+    # Key features with columns
+    st.markdown("<h2 style='color: #1E88E5; text-align: center;'>Key Features</h2>", unsafe_allow_html=True)
+    
+    col1, col2 = st.columns(2)
     
     with col1:
-        st.markdown("""
-        <div class="card fade-in">
-            <div class="card-header">📊 Welcome</div>
-            <p>Interactive marketing analytics dashboard combining Power BI and Python for data-driven insights.</p>
-        </div>
-        """, unsafe_allow_html=True)
-        
-        # Features en forma de tarjetas visuales
-        features = [
-            ("📊", "<strong>Interactive Dashboards</strong> - Explore metrics and KPIs via Power BI"),
-            ("🧹", "<strong>Data Analysis</strong> - Cleaning, transformation, and analysis with Python"),
-            ("📈", "<strong>Visualizations</strong> - Uncover patterns and trends in marketing data"),
-            ("🔍", "<strong>In-Depth Insights</strong> - Understand customer behavior and performance"),
-            ("📅", "<strong>Temporal Analysis</strong> - Identify patterns and opportunities over time")
+        features1 = [
+            create_feature("📊", "Interactive Dashboards", "Explore metrics and KPIs via Power BI"),
+            create_feature("🧹", "Data Analysis", "Cleaning, transformation, and analysis with Python"),
+            create_feature("📈", "Visualizations", "Uncover patterns and trends in marketing data")
         ]
-        
-        st.markdown(create_card("Key Features", create_feature_list(features), "✨"), unsafe_allow_html=True)
+        features_content1 = "".join(features1)
+        st.markdown(create_container("Analysis Tools", features_content1), unsafe_allow_html=True)
     
     with col2:
-        # Añadir una imagen estática en lugar de la animación
-        st.markdown("""
-        <div class="card fade-in">
-            <div style="text-align:center;">
-                <img src="https://cdn.pixabay.com/photo/2018/03/22/02/37/analytics-3249888_1280.png" 
-                     style="max-width:100%; border-radius:5px;">
-            </div>
-        </div>
-        """, unsafe_allow_html=True)
+        features2 = [
+            create_feature("🔍", "In-Depth Insights", "Understand customer behavior and performance"),
+            create_feature("📅", "Temporal Analysis", "Identify patterns and opportunities over time"),
+            create_feature("🛠️", "Customizable Views", "Tailor the analysis to your specific needs")
+        ]
+        features_content2 = "".join(features2)
+        st.markdown(create_container("Insights", features_content2), unsafe_allow_html=True)
     
-    # Beneficios en formato de tarjetas en columnas
-    st.markdown('<div class="section-title fade-in">Benefits</div>', unsafe_allow_html=True)
+    # Benefits section
+    st.markdown("<h2 style='color: #1E88E5; text-align: center;'>Benefits</h2>", unsafe_allow_html=True)
     
     col1, col2, col3 = st.columns(3)
     
+    cols = [col1, col2, col3]
     benefits = [
-        ("📈 Better Decisions", "Make informed decisions based on accurate data insights."),
-        ("👥 Customer Understanding", "Gain deeper insights into customer behavior and preferences."),
-        ("🌟 Enhanced Performance", "Identify areas for improvement in marketing strategies.")
+        create_metric("📈", "Better Decisions", "Data-driven strategy"),
+        create_metric("👥", "Customer Understanding", "Enhanced targeting"),
+        create_metric("🌟", "Improved Performance", "Optimized ROI")
     ]
     
-    for i, (col, (title, desc)) in enumerate(zip([col1, col2, col3], benefits)):
+    for col, benefit in zip(cols, benefits):
         with col:
-            st.markdown(f"""
-            <div class="card fade-in" style="animation-delay: {i*0.2}s">
-                <div class="card-header">{title}</div>
-                <p>{desc}</p>
-            </div>
-            """, unsafe_allow_html=True)
+            st.markdown(benefit, unsafe_allow_html=True)
     
     # Call to action
     st.markdown("""
-    <div style="text-align: center; margin-top: 30px;">
-        <a href="https://github.com/Jotis86/Marketing-Analysis-Project" target="_blank" class="custom-button">
+    <div style='text-align: center; margin-top: 30px;'>
+        <a href='https://github.com/Jotis86/Marketing-Analysis-Project' target='_blank' class='button'>
             View Project on GitHub
         </a>
     </div>
     """, unsafe_allow_html=True)
 
-# Función para mostrar la sección de objetivos con enfoque visual
+# Objectives page
 def show_objectives():
     st.image(main_banner, use_container_width=True)
-    st.markdown('<div class="section-title fade-in">Project Objectives</div>', unsafe_allow_html=True)
     
-    # Breve introducción
-    st.markdown("""
-    <div class="card fade-in">
-        <p>This project provides interactive marketing metrics analysis to support data-driven decision-making.</p>
-    </div>
-    """, unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center; color: #1E88E5;'>Project Objectives</h1>", 
+                unsafe_allow_html=True)
     
-    # Objetivos principales en forma de tarjetas
+    # Brief overview
+    overview = """
+    <p>This dashboard provides interactive marketing metrics analysis to support data-driven decision-making.</p>
+    """
+    st.markdown(create_container("Overview", overview), unsafe_allow_html=True)
+    
+    # Goals
+    goals = [
+        create_feature("🔗", "Data Integration", "Combine data from multiple sources"),
+        create_feature("🧹", "Data Cleaning", "Ensure data quality and reliability"),
+        create_feature("📈", "Data Enrichment", "Add calculated columns and metrics"),
+        create_feature("📊", "Interactive Dashboards", "Develop Power BI visualizations"),
+        create_feature("🐍", "Detailed Analysis", "Use Python for in-depth analysis")
+    ]
+    goals_content = "".join(goals)
+    st.markdown(create_container("Key Goals", goals_content), unsafe_allow_html=True)
+    
+    # Expected benefits
+    st.markdown("<h2 style='color: #1E88E5; text-align: center;'>Expected Benefits</h2>", unsafe_allow_html=True)
+    
     col1, col2 = st.columns(2)
     
-    specific_goals = [
-        ("🔗", "<strong>Data Integration</strong> - Combine data from multiple sources"),
-        ("🧹", "<strong>Data Cleaning</strong> - Ensure data quality and reliability"),
-        ("📈", "<strong>Data Enrichment</strong> - Add calculated columns and metrics"),
-        ("📊", "<strong>Interactive Dashboards</strong> - Develop Power BI visualizations"),
-        ("🐍", "<strong>Detailed Analysis</strong> - Use Python for in-depth analysis")
-    ]
-    
     with col1:
-        st.markdown(create_card("Specific Goals", create_feature_list(specific_goals), "🎯"), unsafe_allow_html=True)
+        st.markdown(create_metric("📈", "Improved Decisions", "Data-driven strategy"), unsafe_allow_html=True)
+        st.markdown(create_metric("👥", "Customer Insights", "Better targeting"), unsafe_allow_html=True)
     
     with col2:
-        # Añadir una imagen estática en lugar de la animación
-        st.markdown("""
-        <div class="card fade-in">
-            <div style="text-align:center;">
-                <img src="https://cdn.pixabay.com/photo/2018/09/04/10/27/business-3653346_1280.jpg" 
-                     style="max-width:100%; border-radius:5px;">
-            </div>
-        </div>
-        """, unsafe_allow_html=True)
-    
-    # Beneficios en formato de métricas
-    st.markdown('<div class="section-title fade-in">Expected Benefits</div>', unsafe_allow_html=True)
-    
-    col1, col2, col3, col4 = st.columns(4)
-    
-    benefits = [
-        ("📈", "Improved Decisions", "Data-driven strategy"),
-        ("👥", "Customer Insights", "Better targeting"),
-        ("💡", "Increased Efficiency", "Streamlined analysis"),
-        ("🔄", "Continuous Improvement", "Optimized marketing")
-    ]
-    
-    for i, (col, (icon, title, desc)) in enumerate(zip([col1, col2, col3, col4], benefits)):
-        with col:
-            st.markdown(f"""
-            <div class="metric-card fade-in" style="animation-delay: {i*0.15}s">
-                <div class="metric-value">{icon}</div>
-                <div class="metric-label">{title}</div>
-                <div>{desc}</div>
-            </div>
-            """, unsafe_allow_html=True)
+        st.markdown(create_metric("💡", "Increased Efficiency", "Streamlined analysis"), unsafe_allow_html=True)
+        st.markdown(create_metric("🔄", "Continuous Improvement", "Optimized marketing"), unsafe_allow_html=True)
 
-# Función para mostrar la sección de proceso de desarrollo con enfoque en el flujo de trabajo
+# Development Process page
 def show_development_process():
     st.image(main_banner, use_container_width=True)
-    st.markdown('<div class="section-title fade-in">Development Process</div>', unsafe_allow_html=True)
     
-    # Visual timeline of the process
-    st.markdown("""
-    <div class="card fade-in">
-        <div class="card-header">🔄 Project Workflow</div>
-        <div class="timeline">
-            <div class="timeline-item">
-                <h3>Data Extraction</h3>
-                <p>Collected data from various sources and consolidated into CSV files</p>
-            </div>
-            <div class="timeline-item">
-                <h3>Data Transformation</h3>
-                <p>Cleaned, normalized, and enriched data using Power BI and Python</p>
-            </div>
-            <div class="timeline-item">
-                <h3>Analysis & Visualization</h3>
-                <p>Created interactive dashboards and detailed visualizations</p>
-            </div>
-            <div class="timeline-item">
-                <h3>Insights & Recommendations</h3>
-                <p>Extracted actionable insights to drive business decisions</p>
-            </div>
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center; color: #1E88E5;'>Development Process</h1>", 
+                unsafe_allow_html=True)
     
-    # Tools and technologies used
+    # Project workflow
+    workflow = [
+        create_step("Data Extraction", "Collected data from various sources and consolidated into CSV files"),
+        create_step("Data Transformation", "Cleaned, normalized, and enriched data using Power BI and Python"),
+        create_step("Analysis & Visualization", "Created interactive dashboards and detailed visualizations"),
+        create_step("Insights & Recommendations", "Extracted actionable insights to drive business decisions")
+    ]
+    workflow_content = "".join(workflow)
+    st.markdown(create_container("Project Workflow", workflow_content), unsafe_allow_html=True)
+    
+    # Tools used
     col1, col2 = st.columns(2)
     
     with col1:
         tools = [
-            ("🖥️", "<strong>Power BI</strong> - Interactive dashboards and visualization"),
-            ("🐍", "<strong>Python</strong> - Data cleaning, transformation, and analysis"),
-            ("🐼", "<strong>Pandas</strong> - Data manipulation and preprocessing"),
-            ("📊", "<strong>Visualization Libraries</strong> - Seaborn & Matplotlib")
+            create_feature("🖥️", "Power BI", "Interactive dashboards and visualization"),
+            create_feature("🐍", "Python", "Data cleaning, transformation, and analysis"),
+            create_feature("🐼", "Pandas", "Data manipulation and preprocessing"),
+            create_feature("📊", "Visualization Libraries", "Seaborn & Matplotlib")
         ]
-        
-        st.markdown(create_card("Tools & Technologies", create_feature_list(tools), "🛠️"), unsafe_allow_html=True)
+        tools_content = "".join(tools)
+        st.markdown(create_container("Tools & Technologies", tools_content), unsafe_allow_html=True)
     
     with col2:
-        # Visualización del proceso ETL
         st.markdown("""
-        <div class="card fade-in">
-            <div class="card-header">ETL Process Overview</div>
-            <img src="https://miro.medium.com/max/1400/1*L_QoAG863l-SUBSYvL_j8A.png" style="width:100%; border-radius:5px; margin-top:10px;">
+        <div class="container">
+            <div class="header">ETL Process</div>
+            <img src="https://miro.medium.com/max/1400/1*L_QoAG863l-SUBSYvL_j8A.png" 
+                 style="width:100%; border-radius:5px;">
         </div>
         """, unsafe_allow_html=True)
 
-# Función para mostrar la sección de resultados con visualizaciones atractivas
+# Results page
 def show_results():
     st.image(main_banner, use_container_width=True)
-    st.markdown('<div class="section-title fade-in">Key Results</div>', unsafe_allow_html=True)
     
-    # KPIs y métricas principales
+    st.markdown("<h1 style='text-align: center; color: #1E88E5;'>Key Results</h1>", 
+                unsafe_allow_html=True)
+    
+    # KPIs in row
     col1, col2, col3, col4 = st.columns(4)
     
-    kpis = [
-        ("📊", "KPIs", "Performance indicators"),
-        ("📏", "Measures", "Calculated metrics"),
-        ("➕", "Enrichment", "Added data context"),
-        ("🔍", "Segmentation", "Customer insights")
+    metrics = [
+        create_metric("📊", "KPIs", "Performance indicators"),
+        create_metric("📏", "Measures", "Calculated metrics"),
+        create_metric("➕", "Enrichment", "Added data context"),
+        create_metric("🔍", "Segmentation", "Customer insights")
     ]
     
-    for i, (col, (icon, title, desc)) in enumerate(zip([col1, col2, col3, col4], kpis)):
+    for col, metric in zip([col1, col2, col3, col4], metrics):
         with col:
-            st.markdown(f"""
-            <div class="metric-card fade-in" style="animation-delay: {i*0.15}s; background-color: #2980b9;">
-                <div class="metric-value">{icon}</div>
-                <div class="metric-label">{title}</div>
-                <div>{desc}</div>
-            </div>
-            """, unsafe_allow_html=True)
+            st.markdown(metric, unsafe_allow_html=True)
     
-    # Visualizaciones de resultados
-    st.markdown('<div class="section-title fade-in">Analysis Highlights</div>', unsafe_allow_html=True)
-    
+    # Analysis highlights
     col1, col2 = st.columns(2)
     
     with col1:
-        # Customer Insights
-        st.markdown("""
-        <div class="card fade-in">
-            <div class="card-header">👥 Customer Insights</div>
-            <ul>
-                <li><strong>Behavior Analysis:</strong> Understanding customer purchase patterns</li>
-                <li><strong>Segmentation:</strong> Identification of key customer segments</li>
-                <li><strong>Lifetime Value:</strong> Calculation of customer lifetime value</li>
-            </ul>
-            <div style="text-align:center; margin-top:15px;">
-                <img src="https://www.datapine.com/blog/wp-content/uploads/2019/05/customer-analytics-dashboard-2.png" 
-                     style="max-width:100%; border-radius:5px;">
-            </div>
+        customer_insights = """
+        <ul>
+            <li><strong>Behavior Analysis:</strong> Understanding customer purchase patterns</li>
+            <li><strong>Segmentation:</strong> Identification of key customer segments</li>
+            <li><strong>Lifetime Value:</strong> Calculation of customer lifetime value</li>
+        </ul>
+        <div style="text-align:center; margin-top:15px;">
+            <img src="https://www.datapine.com/blog/wp-content/uploads/2019/05/customer-analytics-dashboard-2.png" 
+                 style="max-width:100%; border-radius:5px;">
         </div>
-        """, unsafe_allow_html=True)
+        """
+        st.markdown(create_container("Customer Insights", customer_insights), unsafe_allow_html=True)
     
     with col2:
-        # Marketing Performance
-        st.markdown("""
-        <div class="card fade-in">
-            <div class="card-header">📈 Marketing Performance</div>
-            <ul>
-                <li><strong>Campaign Effectiveness:</strong> ROI and conversion analysis</li>
-                <li><strong>Channel Performance:</strong> Evaluation of marketing channels</li>
-                <li><strong>Content Engagement:</strong> Analysis of content effectiveness</li>
-            </ul>
-            <div style="text-align:center; margin-top:15px;">
-                <img src="https://www.datapine.com/blog/wp-content/uploads/2019/05/marketing-performance-dashboard.png" 
-                     style="max-width:100%; border-radius:5px;">
-            </div>
+        marketing_performance = """
+        <ul>
+            <li><strong>Campaign Effectiveness:</strong> ROI and conversion analysis</li>
+            <li><strong>Channel Performance:</strong> Evaluation of marketing channels</li>
+            <li><strong>Content Engagement:</strong> Analysis of content effectiveness</li>
+        </ul>
+        <div style="text-align:center; margin-top:15px;">
+            <img src="https://www.datapine.com/blog/wp-content/uploads/2019/05/marketing-performance-dashboard.png" 
+                 style="max-width:100%; border-radius:5px;">
         </div>
-        """, unsafe_allow_html=True)
-    
-    # Key takeaways
-    st.markdown("""
-    <div class="card fade-in">
-        <div class="card-header">🔑 Key Takeaways</div>
-        <div style="display: flex; justify-content: space-around; flex-wrap: wrap; margin-top: 15px;">
-            <div style="flex: 1; min-width: 200px; margin: 10px; text-align: center; padding: 15px; background-color: #f8f9fa; border-radius: 5px;">
-                <div style="font-size: 2rem;">📊</div>
-                <div style="font-weight: 600; margin-top: 10px;">Data-Driven Decisions</div>
-                <div style="margin-top: 5px; color: #666;">Informed marketing strategy</div>
-            </div>
-            <div style="flex: 1; min-width: 200px; margin: 10px; text-align: center; padding: 15px; background-color: #f8f9fa; border-radius: 5px;">
-                <div style="font-size: 2rem;">👥</div>
-                <div style="font-weight: 600; margin-top: 10px;">Customer Understanding</div>
-                <div style="margin-top: 5px; color: #666;">Better targeting and engagement</div>
-            </div>
-            <div style="flex: 1; min-width: 200px; margin: 10px; text-align: center; padding: 15px; background-color: #f8f9fa; border-radius: 5px;">
-                <div style="font-size: 2rem;">📈</div>
-                <div style="font-weight: 600; margin-top: 10px;">Optimization</div>
-                <div style="margin-top: 5px; color: #666;">Enhanced marketing performance</div>
-            </div>
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
+        """
+        st.markdown(create_container("Marketing Performance", marketing_performance), unsafe_allow_html=True)
 
-# Función para mostrar la sección de Power BI con galería de capturas
+# Power BI page
 def show_power_bi():
     st.image(main_banner, use_container_width=True)
-    st.markdown('<div class="section-title fade-in">Power BI Dashboard</div>', unsafe_allow_html=True)
     
-    # Descripción breve
-    st.markdown("""
-    <div class="card fade-in">
-        <p>Interactive Power BI dashboards provide comprehensive analysis of key marketing metrics.</p>
-    </div>
-    """, unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center; color: #1E88E5;'>Power BI Dashboard</h1>", 
+                unsafe_allow_html=True)
     
-    # Características del dashboard
+    # Brief description
+    description = """
+    <p>Interactive Power BI dashboards provide comprehensive analysis of key marketing metrics.</p>
+    """
+    st.markdown(create_container("Overview", description), unsafe_allow_html=True)
+    
+    # Dashboard features and video demo
     col1, col2 = st.columns(2)
     
     with col1:
         dashboard_features = [
-            ("📈", "<strong>Interactive Visualizations</strong> - Pivot charts and dynamic tables"),
-            ("📊", "<strong>Key Metrics</strong> - Sales, channels, products, and campaign KPIs"),
-            ("📅", "<strong>Temporal Analysis</strong> - Trends and patterns over time"),
-            ("🗂️", "<strong>Multiple Tabs</strong> - Global, Orders, Products, Campaigns, Customers")
+            create_feature("📈", "Interactive Visualizations", "Pivot charts and dynamic tables"),
+            create_feature("📊", "Key Metrics", "Sales, channels, products, and campaign KPIs"),
+            create_feature("📅", "Temporal Analysis", "Trends and patterns over time"),
+            create_feature("🗂️", "Multiple Tabs", "Global, Orders, Products, Campaigns, Customers")
         ]
-        
-        st.markdown(create_card("Dashboard Features", create_feature_list(dashboard_features), "✨"), unsafe_allow_html=True)
+        features_content = "".join(dashboard_features)
+        st.markdown(create_container("Dashboard Features", features_content), unsafe_allow_html=True)
     
     with col2:
-        # Video clip with preview
+        # Video demo
         video_file = os.path.join(current_dir, "clip.mp4")
         if os.path.exists(video_file):
             st.video(video_file)
     
-    # Mostrar capturas de pantalla
-    st.markdown('<div class="section-title fade-in">Dashboard Gallery</div>', unsafe_allow_html=True)
+    # Dashboard screenshots
+    st.markdown("<h2 style='color: #1E88E5; text-align: center;'>Dashboard Gallery</h2>", unsafe_allow_html=True)
     
-    # Crear una galería simple de imágenes
+    # Simple gallery with 2 columns
+    col1, col2 = st.columns(2)
+    
     screenshots = [
-        {"path": "screenshot_1.png", "caption": "Global View Dashboard"},
+        {"path": "screenshot_1.png", "caption": "Global View"},
         {"path": "screenshot_2.png", "caption": "Products Analysis"},
         {"path": "screenshot_3.png", "caption": "Customer Segmentation"},
-        {"path": "screenshot_4.png", "caption": "Campaign Performance"},
-        {"path": "screenshot_5.png", "caption": "Sales Trends"}
+        {"path": "screenshot_4.png", "caption": "Campaign Performance"}
     ]
-    
-    # Crear layout de 2 columnas para las imágenes
-    col1, col2 = st.columns(2)
     
     for i, screenshot in enumerate(screenshots):
         img_path = os.path.join(current_dir, screenshot["path"])
         
         if os.path.exists(img_path):
-            # Alternar entre las dos columnas
             with col1 if i % 2 == 0 else col2:
                 st.markdown(f"""
-                <div class="card fade-in" style="animation-delay: {i*0.2}s">
-                    <div class="card-header">{screenshot["caption"]}</div>
-                    <div style="text-align:center;">
+                <div class="container" style="padding: 10px;">
+                    <div class="header">{screenshot["caption"]}</div>
+                    <div class="image-container">
                         <img src="data:image/png;base64,{get_image_base64(img_path)}" 
-                             style="max-width:100%; border-radius:5px;">
+                             style="width:100%;">
                     </div>
                 </div>
                 """, unsafe_allow_html=True)
 
-# Función para convertir imágenes a base64 para mostrarlas en HTML
+# Conclusions page
+def show_conclusions():
+    st.image(main_banner, use_container_width=True)
+    
+    st.markdown("<h1 style='text-align: center; color: #1E88E5;'>Key Conclusions</h1>", 
+                unsafe_allow_html=True)
+    
+    # Insights section
+    insights = """
+    <ul>
+        <li><strong>Data-Driven Decision Making:</strong> The analysis provided actionable insights for marketing strategy optimization.</li>
+        <li><strong>Customer Behavior Patterns:</strong> Identified key behavioral patterns among different customer segments.</li>
+        <li><strong>Campaign Effectiveness:</strong> Evaluated and optimized marketing campaign performance.</li>
+        <li><strong>Channel Optimization:</strong> Determined the most effective marketing channels for different products and audiences.</li>
+    </ul>
+    """
+    st.markdown(create_container("Key Insights & Findings", insights), unsafe_allow_html=True)
+    
+    # Outcome metrics
+    st.markdown("<h2 style='color: #1E88E5; text-align: center;'>Value Delivered</h2>", unsafe_allow_html=True)
+    
+    col1, col2, col3 = st.columns(3)
+    
+    metrics = [
+        create_metric("📈", "Data-Driven Strategy", "Better marketing decisions"),
+        create_metric("👥", "Customer Insights", "Enhanced targeting"),
+        create_metric("⚡", "Improved Performance", "Optimized marketing ROI")
+    ]
+    
+    for col, metric in zip([col1, col2, col3], metrics):
+        with col:
+            st.markdown(metric, unsafe_allow_html=True)
+    
+    # Future directions
+    future_content = """
+    <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-top: 15px;">
+        <div style="flex: 1; min-width: 200px; padding: 15px; background-color: #f7f9fc; border-radius: 6px;">
+            <div style="font-weight: 600; color: #1E88E5; margin-bottom: 5px;">Expand Data Sources</div>
+            <div>Integrate additional data sources for comprehensive analysis</div>
+        </div>
+        <div style="flex: 1; min-width: 200px; padding: 15px; background-color: #f7f9fc; border-radius: 6px;">
+            <div style="font-weight: 600; color: #1E88E5; margin-bottom: 5px;">Advanced Analytics</div>
+            <div>Implement machine learning for predictive marketing insights</div>
+        </div>
+        <div style="flex: 1; min-width: 200px; padding: 15px; background-color: #f7f9fc; border-radius: 6px;">
+            <div style="font-weight: 600; color: #1E88E5; margin-bottom: 5px;">Real-Time Dashboard</div>
+            <div>Develop real-time analytics capabilities for instant insights</div>
+        </div>
+    </div>
+    """
+    st.markdown(create_container("Future Directions", future_content), unsafe_allow_html=True)
+    
+    # Call to action
+    st.markdown("""
+    <div style='text-align: center; margin-top: 30px; margin-bottom: 30px;'>
+        <a href='https://github.com/Jotis86/Marketing-Analysis-Project' target='_blank' class='button'>
+            View Complete Analysis on GitHub
+        </a>
+    </div>
+    """, unsafe_allow_html=True)
+
+# Function to convert images to base64
 def get_image_base64(image_path):
     img = Image.open(image_path)
     buffered = BytesIO()
     img.save(buffered, format="PNG")
     return base64.b64encode(buffered.getvalue()).decode()
 
-# Función para mostrar la sección de conclusiones con enfoque visual
-def show_conclusions():
-    st.image(main_banner, use_container_width=True)
-    st.markdown('<div class="section-title fade-in">Key Conclusions</div>', unsafe_allow_html=True)
-    
-    # Conclusiones principales en tarjetas
-    col1, col2 = st.columns(2)
-    
-    with col1:
-        st.markdown("""
-        <div class="card fade-in">
-            <div class="card-header">📊 Insights & Findings</div>
-            <ul>
-                <li><strong>Data-Driven Decision Making:</strong> The analysis provided actionable insights for marketing strategy optimization.</li>
-                <li><strong>Customer Behavior Patterns:</strong> Identified key behavioral patterns among different customer segments.</li>
-                <li><strong>Campaign Effectiveness:</strong> Evaluated and optimized marketing campaign performance.</li>
-                <li><strong>Channel Optimization:</strong> Determined the most effective marketing channels for different products and audiences.</li>
-            </ul>
-        </div>
-        """, unsafe_allow_html=True)
-    
-    with col2:
-        # Imagen estática en lugar de animación
-        st.markdown("""
-        <div class="card fade-in">
-            <div style="text-align:center;">
-                <img src="https://cdn.pixabay.com/photo/2018/07/14/11/32/network-3537400_1280.png" 
-                     style="max-width:100%; border-radius:5px;">
-            </div>
-        </div>
-        """, unsafe_allow_html=True)
-    
-    # Métricas finales
-    st.markdown('<div class="section-title fade-in">Value Delivered</div>', unsafe_allow_html=True)
-    
-    col1, col2, col3 = st.columns(3)
-    
-    outcomes = [
-        ("📈", "Data-Driven Strategy", "Better marketing decisions"),
-        ("👥", "Deeper Customer Insights", "Enhanced targeting"),
-        ("⚡", "Improved Performance", "Optimized marketing ROI")
-    ]
-    
-    for i, (col, (icon, title, desc)) in enumerate(zip([col1, col2, col3], outcomes)):
-        with col:
-            st.markdown(f"""
-            <div class="metric-card fade-in" style="animation-delay: {i*0.15}s; background-color: #27ae60;">
-                <div class="metric-value">{icon}</div>
-                <div class="metric-label">{title}</div>
-                <div>{desc}</div>
-            </div>
-            """, unsafe_allow_html=True)
-    
-    # Future work
-    st.markdown("""
-    <div class="card fade-in">
-        <div class="card-header">🚀 Future Directions</div>
-        <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-top: 15px;">
-            <div style="flex: 1; min-width: 200px; padding: 15px; background-color: #f8f9fa; border-radius: 5px;">
-                <div style="font-weight: 600; color: #3498db; margin-bottom: 5px;">Expand Data Sources</div>
-                <div>Integrate additional data sources for comprehensive analysis</div>
-            </div>
-            <div style="flex: 1; min-width: 200px; padding: 15px; background-color: #f8f9fa; border-radius: 5px;">
-                <div style="font-weight: 600; color: #3498db; margin-bottom: 5px;">Advanced Analytics</div>
-                <div>Implement machine learning for predictive marketing insights</div>
-            </div>
-            <div style="flex: 1; min-width: 200px; padding: 15px; background-color: #f8f9fa; border-radius: 5px;">
-                <div style="font-weight: 600; color: #3498db; margin-bottom: 5px;">Real-Time Dashboard</div>
-                <div>Develop real-time analytics capabilities for instant insights</div>
-            </div>
-        </div>
-    </div>
-    
-    <div style="text-align: center; margin-top: 30px; margin-bottom: 30px;">
-        <a href="https://github.com/Jotis86/Marketing-Analysis-Project" target="_blank" class="custom-button">
-            View Complete Analysis on GitHub
-        </a>
-    </div>
-    """, unsafe_allow_html=True)
-
-# Menú de navegación mejorado
+# Sidebar navigation
 with st.sidebar:
     st.image(sidebar_logo, use_container_width=True)
     
     st.markdown("""
-    <div style="text-align: center; margin-bottom: 20px;">
-        <h2 style="color: #3498db; margin-bottom: 5px;">Marketing Dashboard</h2>
-        <p style="opacity: 0.8; font-size: 0.9rem;">Data-driven marketing insights</p>
+    <div style="text-align: center; margin: 20px 0;">
+        <h2 style="color: #1E88E5; margin-bottom: 5px;">Marketing Dashboard</h2>
+        <p style="opacity: 0.8; font-size: 14px; color: #333;">Data-driven insights</p>
     </div>
     """, unsafe_allow_html=True)
     
-    # Menú con íconos
+    # Simple navigation menu
     menu_options = {
         "Home": "🏠",
         "Objectives": "🎯",
@@ -684,37 +525,31 @@ with st.sidebar:
         "Conclusions": "📝"
     }
     
-    menu = st.radio(
-        "Navigation",
-        list(menu_options.keys()),
-        format_func=lambda x: f"{menu_options[x]} {x}"
-    )
+    menu = st.radio("", list(menu_options.keys()), 
+                     format_func=lambda x: f"{menu_options[x]} {x}")
     
-    # Separador
     st.markdown("<hr>", unsafe_allow_html=True)
     
-    # Botón para ir al repositorio de GitHub con estilo
+    # GitHub button
     st.markdown("""
     <div style="text-align: center;">
         <a href="https://github.com/Jotis86/Marketing-Analysis-Project" target="_blank" 
            style="display: inline-block; padding: 8px 16px; background-color: #333; color: white; 
-                  text-decoration: none; border-radius: 5px; font-size: 0.9rem;">
-            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" 
-                 style="height: 20px; vertical-align: middle; margin-right: 5px;">
+                  text-decoration: none; border-radius: 4px; font-size: 14px;">
             GitHub Repository
         </a>
     </div>
     """, unsafe_allow_html=True)
     
-    # Información de contacto
+    # Contact information
     st.markdown("""
-    <div class="sidebar-footer" style="margin-top: 50px; text-align: center; font-size: 0.8rem;">
+    <div style="margin-top: 40px; text-align: center; font-size: 12px; color: #333;">
         <p>© 2023 Marketing Analysis Project</p>
-        <p><a href="mailto:contact@example.com" style="color: #5dade2;">contact@example.com</a></p>
+        <p><a href="mailto:contact@example.com" style="color: #1E88E5;">contact@example.com</a></p>
     </div>
     """, unsafe_allow_html=True)
 
-# Mostrar la sección seleccionada
+# Display selected page
 if menu == "Home":
     show_home()
 elif menu == "Objectives":

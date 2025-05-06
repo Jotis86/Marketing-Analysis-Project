@@ -291,14 +291,6 @@ def show_home():
         with col:
             st.markdown(benefit, unsafe_allow_html=True)
     
-    # Call to action
-    st.markdown("""
-    <div style='text-align: center; margin-top: 30px;'>
-        <a href='https://github.com/Jotis86/Marketing-Analysis-Project' target='_blank' class='button'>
-            View Project on GitHub
-        </a>
-    </div>
-    """, unsafe_allow_html=True)
 
 # Objectives page
 def show_objectives():
@@ -621,14 +613,6 @@ def show_conclusions():
     """
     st.markdown(create_container("Future Directions", future_content), unsafe_allow_html=True)
     
-    # Call to action
-    st.markdown("""
-    <div style='text-align: center; margin-top: 30px; margin-bottom: 30px;'>
-        <a href='https://github.com/Jotis86/Marketing-Analysis-Project' target='_blank' class='button'>
-            View Complete Analysis on GitHub
-        </a>
-    </div>
-    """, unsafe_allow_html=True)
 
 # Sidebar navigation
 with st.sidebar:

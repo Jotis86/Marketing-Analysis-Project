@@ -610,7 +610,7 @@ with st.sidebar:
     st.markdown("""
     <div style="margin-top: 40px; text-align: center; font-size: 12px; color: #ddd;">
         <p>© 2023 Marketing Analysis Project</p>
-        <p><a href="mailto:contact@example.com" style="color: #80c1ff;">contact@example.com</a></p>
+        <p><a href="mailto:jotaduranbon@gmail.com" style="color: #80c1ff;">contact@example.com</a></p>
     </div>
     """, unsafe_allow_html=True)
 

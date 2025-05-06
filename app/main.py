@@ -316,9 +316,11 @@ def show_development_process():
         st.markdown(create_container("Tools & Technologies", tools_content), unsafe_allow_html=True)
     
     with col2:
+        # Fixed ETL Process section with explicit styling
         st.markdown("""
         <div class="container">
             <div class="header">ETL Process</div>
+            <p style="color: #333; margin-bottom: 10px;">Extract, Transform, Load process for data preparation</p>
             <img src="https://miro.medium.com/max/1400/1*L_QoAG863l-SUBSYvL_j8A.png" 
                  style="width:100%; border-radius:5px;">
         </div>
@@ -345,36 +347,40 @@ def show_results():
         with col:
             st.markdown(metric, unsafe_allow_html=True)
     
-    # Analysis highlights
+    # Analysis highlights - Fixed with explicit styling
     col1, col2 = st.columns(2)
     
     with col1:
-        customer_insights = """
-        <ul>
-            <li><strong>Behavior Analysis:</strong> Understanding customer purchase patterns</li>
-            <li><strong>Segmentation:</strong> Identification of key customer segments</li>
-            <li><strong>Lifetime Value:</strong> Calculation of customer lifetime value</li>
-        </ul>
-        <div style="text-align:center; margin-top:15px;">
-            <img src="https://www.datapine.com/blog/wp-content/uploads/2019/05/customer-analytics-dashboard-2.png" 
-                 style="max-width:100%; border-radius:5px;">
+        st.markdown("""
+        <div class="container">
+            <div class="header">Customer Insights</div>
+            <ul style="color: #333; padding-left: 20px;">
+                <li><strong>Behavior Analysis:</strong> Understanding customer purchase patterns</li>
+                <li><strong>Segmentation:</strong> Identification of key customer segments</li>
+                <li><strong>Lifetime Value:</strong> Calculation of customer lifetime value</li>
+            </ul>
+            <div style="text-align:center; margin-top:15px;">
+                <img src="https://www.datapine.com/blog/wp-content/uploads/2019/05/customer-analytics-dashboard-2.png" 
+                     style="max-width:100%; border-radius:5px;">
+            </div>
         </div>
-        """
-        st.markdown(create_container("Customer Insights", customer_insights), unsafe_allow_html=True)
+        """, unsafe_allow_html=True)
     
     with col2:
-        marketing_performance = """
-        <ul>
-            <li><strong>Campaign Effectiveness:</strong> ROI and conversion analysis</li>
-            <li><strong>Channel Performance:</strong> Evaluation of marketing channels</li>
-            <li><strong>Content Engagement:</strong> Analysis of content effectiveness</li>
-        </ul>
-        <div style="text-align:center; margin-top:15px;">
-            <img src="https://www.datapine.com/blog/wp-content/uploads/2019/05/marketing-performance-dashboard.png" 
-                 style="max-width:100%; border-radius:5px;">
+        st.markdown("""
+        <div class="container">
+            <div class="header">Marketing Performance</div>
+            <ul style="color: #333; padding-left: 20px;">
+                <li><strong>Campaign Effectiveness:</strong> ROI and conversion analysis</li>
+                <li><strong>Channel Performance:</strong> Evaluation of marketing channels</li>
+                <li><strong>Content Engagement:</strong> Analysis of content effectiveness</li>
+            </ul>
+            <div style="text-align:center; margin-top:15px;">
+                <img src="https://www.datapine.com/blog/wp-content/uploads/2019/05/marketing-performance-dashboard.png" 
+                     style="max-width:100%; border-radius:5px;">
+            </div>
         </div>
-        """
-        st.markdown(create_container("Marketing Performance", marketing_performance), unsafe_allow_html=True)
+        """, unsafe_allow_html=True)
 
 # Power BI page
 def show_power_bi():
@@ -510,8 +516,8 @@ with st.sidebar:
     
     st.markdown("""
     <div style="text-align: center; margin: 20px 0;">
-        <h2 style="color: #1E88E5; margin-bottom: 5px;">Marketing Dashboard</h2>
-        <p style="opacity: 0.8; font-size: 14px; color: #333;">Data-driven insights</p>
+        <h2 style="color: white; margin-bottom: 5px;">Marketing Dashboard</h2>
+        <p style="font-size: 14px; color: #ddd;">Data-driven insights</p>
     </div>
     """, unsafe_allow_html=True)
     
@@ -528,24 +534,24 @@ with st.sidebar:
     menu = st.radio("", list(menu_options.keys()), 
                      format_func=lambda x: f"{menu_options[x]} {x}")
     
-    st.markdown("<hr>", unsafe_allow_html=True)
+    st.markdown("<hr style='margin: 20px 0; opacity: 0.3;'>", unsafe_allow_html=True)
     
     # GitHub button
     st.markdown("""
     <div style="text-align: center;">
         <a href="https://github.com/Jotis86/Marketing-Analysis-Project" target="_blank" 
-           style="display: inline-block; padding: 8px 16px; background-color: #333; color: white; 
+           style="display: inline-block; padding: 8px 16px; background-color: #555; color: white; 
                   text-decoration: none; border-radius: 4px; font-size: 14px;">
             GitHub Repository
         </a>
     </div>
     """, unsafe_allow_html=True)
     
-    # Contact information
+    # Contact information - Fixed to ensure visibility on dark sidebar
     st.markdown("""
-    <div style="margin-top: 40px; text-align: center; font-size: 12px; color: #333;">
+    <div style="margin-top: 40px; text-align: center; font-size: 12px; color: #ddd;">
         <p>© 2023 Marketing Analysis Project</p>
-        <p><a href="mailto:contact@example.com" style="color: #1E88E5;">contact@example.com</a></p>
+        <p><a href="mailto:contact@example.com" style="color: #80c1ff;">contact@example.com</a></p>
     </div>
     """, unsafe_allow_html=True)
 

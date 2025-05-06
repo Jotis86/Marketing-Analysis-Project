@@ -134,19 +134,56 @@ def load_css():
         .menu-icon {
             margin-right: 10px;
         }
+        
+        /* CSS Banner replacement */
+        .custom-banner {
+            background: linear-gradient(90deg, #1E88E5, #1565C0);
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .banner-title {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .banner-subtitle {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+        
+        /* CSS Sidebar Logo replacement */
+        .sidebar-logo {
+            background: linear-gradient(135deg, #1E88E5, #1565C0);
+            color: white;
+            text-align: center;
+            padding: 20px 10px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        
+        .logo-icon {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
     </style>
     """
     st.markdown(css, unsafe_allow_html=True)
 
 load_css()
 
-# Load images
+# Current directory path for any file operations
 current_dir = os.path.dirname(os.path.abspath(__file__))
-main_banner_path = os.path.join(current_dir, "portada.png")
-sidebar_logo_path = os.path.join(current_dir, "menu.png")
-
-main_banner = Image.open(main_banner_path)
-sidebar_logo = Image.open(sidebar_logo_path)
 
 # Helper functions
 def create_container(title, content):
@@ -184,10 +221,25 @@ def create_step(title, description):
     </div>
     """
 
+# Function to convert images to base64
+def get_image_base64(image_path):
+    img = Image.open(image_path)
+    buffered = BytesIO()
+    img.save(buffered, format="PNG")
+    return base64.b64encode(buffered.getvalue()).decode()
+
+# Custom banner function
+def show_custom_banner(title="Marketing Analysis Dashboard", subtitle="Interactive insights for data-driven marketing strategies"):
+    st.markdown(f"""
+    <div class="custom-banner">
+        <div class="banner-title">{title}</div>
+        <div class="banner-subtitle">{subtitle}</div>
+    </div>
+    """, unsafe_allow_html=True)
+
 # Home page
 def show_home():
-    # Banner and title
-    st.image(main_banner, use_container_width=True)
+    show_custom_banner()
     
     st.markdown("<h1 style='text-align: center; color: #1E88E5;'>Marketing Analysis Project</h1>", 
                 unsafe_allow_html=True)
@@ -239,10 +291,18 @@ def show_home():
         with col:
             st.markdown(benefit, unsafe_allow_html=True)
     
+    # Call to action
+    st.markdown("""
+    <div style='text-align: center; margin-top: 30px;'>
+        <a href='https://github.com/Jotis86/Marketing-Analysis-Project' target='_blank' class='button'>
+            View Project on GitHub
+        </a>
+    </div>
+    """, unsafe_allow_html=True)
 
 # Objectives page
 def show_objectives():
-    st.image(main_banner, use_container_width=True)
+    show_custom_banner("Project Objectives", "Defining the goals and expected outcomes")
     
     st.markdown("<h1 style='text-align: center; color: #1E88E5;'>Project Objectives</h1>", 
                 unsafe_allow_html=True)
@@ -281,7 +341,7 @@ def show_objectives():
 
 # Development Process page
 def show_development_process():
-    st.image(main_banner, use_container_width=True)
+    show_custom_banner("Development Process", "The workflow and methodologies used")
     
     st.markdown("<h1 style='text-align: center; color: #1E88E5;'>Development Process</h1>", 
                 unsafe_allow_html=True)
@@ -310,7 +370,7 @@ def show_development_process():
         st.markdown(create_container("Tools & Technologies", tools_content), unsafe_allow_html=True)
     
     with col2:
-        # Empty or add another content section here if needed
+        # Project approach instead of ETL process overview
         st.markdown("""
         <div class="container" style="background-color: white; color: #333333;">
             <div class="header" style="color: #1E88E5;">Project Approach</div>
@@ -373,7 +433,7 @@ def show_development_process():
 
 # Results page
 def show_results():
-    st.image(main_banner, use_container_width=True)
+    show_custom_banner("Key Results", "Analysis findings and insights")
     
     st.markdown("<h1 style='text-align: center; color: #1E88E5;'>Key Results</h1>", 
                 unsafe_allow_html=True)
@@ -446,7 +506,7 @@ def show_results():
 
 # Power BI page
 def show_power_bi():
-    st.image(main_banner, use_container_width=True)
+    show_custom_banner("Power BI Dashboard", "Interactive visualizations and analytics")
     
     st.markdown("<h1 style='text-align: center; color: #1E88E5;'>Power BI Dashboard</h1>", 
                 unsafe_allow_html=True)
@@ -481,7 +541,7 @@ def show_power_bi():
     st.markdown("<h2 style='color: #1E88E5; text-align: center; margin-top: 30px;'>Dashboard Gallery</h2>", 
                 unsafe_allow_html=True)
     
-    # Keep the gallery with 2 columns
+    # Gallery with 2 columns
     col1, col2 = st.columns(2)
     
     screenshots = [
@@ -511,14 +571,14 @@ def show_power_bi():
 
 # Conclusions page
 def show_conclusions():
-    st.image(main_banner, use_container_width=True)
+    show_custom_banner("Key Conclusions", "Findings and future directions")
     
     st.markdown("<h1 style='text-align: center; color: #1E88E5;'>Key Conclusions</h1>", 
                 unsafe_allow_html=True)
     
     # Insights section
     insights = """
-    <ul>
+    <ul style="color: #333; padding-left: 20px;">
         <li><strong>Data-Driven Decision Making:</strong> The analysis provided actionable insights for marketing strategy optimization.</li>
         <li><strong>Customer Behavior Patterns:</strong> Identified key behavioral patterns among different customer segments.</li>
         <li><strong>Campaign Effectiveness:</strong> Evaluated and optimized marketing campaign performance.</li>
@@ -545,15 +605,15 @@ def show_conclusions():
     # Future directions
     future_content = """
     <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-top: 15px;">
-        <div style="flex: 1; min-width: 200px; padding: 15px; background-color: #f7f9fc; border-radius: 6px;">
+        <div style="flex: 1; min-width: 200px; padding: 15px; background-color: #f7f9fc; border-radius: 6px; color: #333333;">
             <div style="font-weight: 600; color: #1E88E5; margin-bottom: 5px;">Expand Data Sources</div>
             <div>Integrate additional data sources for comprehensive analysis</div>
         </div>
-        <div style="flex: 1; min-width: 200px; padding: 15px; background-color: #f7f9fc; border-radius: 6px;">
+        <div style="flex: 1; min-width: 200px; padding: 15px; background-color: #f7f9fc; border-radius: 6px; color: #333333;">
             <div style="font-weight: 600; color: #1E88E5; margin-bottom: 5px;">Advanced Analytics</div>
             <div>Implement machine learning for predictive marketing insights</div>
         </div>
-        <div style="flex: 1; min-width: 200px; padding: 15px; background-color: #f7f9fc; border-radius: 6px;">
+        <div style="flex: 1; min-width: 200px; padding: 15px; background-color: #f7f9fc; border-radius: 6px; color: #333333;">
             <div style="font-weight: 600; color: #1E88E5; margin-bottom: 5px;">Real-Time Dashboard</div>
             <div>Develop real-time analytics capabilities for instant insights</div>
         </div>
@@ -561,17 +621,24 @@ def show_conclusions():
     """
     st.markdown(create_container("Future Directions", future_content), unsafe_allow_html=True)
     
-
-# Function to convert images to base64
-def get_image_base64(image_path):
-    img = Image.open(image_path)
-    buffered = BytesIO()
-    img.save(buffered, format="PNG")
-    return base64.b64encode(buffered.getvalue()).decode()
+    # Call to action
+    st.markdown("""
+    <div style='text-align: center; margin-top: 30px; margin-bottom: 30px;'>
+        <a href='https://github.com/Jotis86/Marketing-Analysis-Project' target='_blank' class='button'>
+            View Complete Analysis on GitHub
+        </a>
+    </div>
+    """, unsafe_allow_html=True)
 
 # Sidebar navigation
 with st.sidebar:
-    st.image(sidebar_logo, use_container_width=True)
+    # CSS-based sidebar logo instead of image
+    st.markdown("""
+    <div class="sidebar-logo">
+        <div class="logo-icon">📊</div>
+        <div class="logo-text">MARKETING<br>ANALYTICS</div>
+    </div>
+    """, unsafe_allow_html=True)
     
     st.markdown("""
     <div style="text-align: center; margin: 20px 0;">
@@ -610,7 +677,7 @@ with st.sidebar:
     st.markdown("""
     <div style="margin-top: 40px; text-align: center; font-size: 12px; color: #ddd;">
         <p>© 2023 Marketing Analysis Project</p>
-        <p><a href="mailto:jotaduranbon@gmail.com" style="color: #80c1ff;">contact@example.com</a></p>
+        <p><a href="mailto:jotaduranbon@gmail.com" style="color: #80c1ff;">jotaduranbon@gmail.com</a></p>
     </div>
     """, unsafe_allow_html=True)
 

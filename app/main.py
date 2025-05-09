@@ -628,7 +628,7 @@ with st.sidebar:
     st.markdown("""
     <div style="text-align: center; margin: 20px 0;">
         <h2 style="color: #1E88E5; margin-bottom: 5px;">Marketing Dashboard</h2>
-        <p style="font-size: 14px; color: rgba(49, 51, 63, 0.8);">Data-driven insights</p>
+        <p style="font-size: 14px; color: #1E88E5;">Data-driven insights</p>
     </div>
     """, unsafe_allow_html=True)
     

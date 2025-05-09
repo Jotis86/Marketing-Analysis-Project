@@ -660,7 +660,7 @@ with st.sidebar:
     
     # Contact information - Fixed to ensure visibility on dark sidebar
     st.markdown("""
-    <div style="margin-top: 40px; text-align: center; font-size: 12px; color: #ddd;">
+    <div style="margin-top: 40px; text-align: center; font-size: 12px; color: #1E88E5;">
         <p>© 2025 Marketing Analysis Project</p>
         <p><a href="mailto:jotaduranbon@gmail.com" style="color: #80c1ff;">jotaduranbon@gmail.com</a></p>
     </div>

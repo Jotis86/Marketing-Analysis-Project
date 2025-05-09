@@ -624,10 +624,36 @@ with st.sidebar:
     </div>
     """, unsafe_allow_html=True)
     
+    # Theme-compatible text styling
+    st.markdown("""
+    <style>
+        /* This CSS will handle both light and dark mode */
+        [data-testid="stSidebar"] {
+            background-color: #f0f2f6; /* Light background for light mode */
+        }
+        
+        [data-baseweb="tab"] {
+            color: #262730 !important; /* Dark text for light mode */
+        }
+        
+        /* Apply dark mode styles conditionally */
+        @media (prefers-color-scheme: dark) {
+            [data-testid="stSidebar"] {
+                background-color: #0e1117; /* Dark background for dark mode */
+            }
+            
+            [data-baseweb="tab"] {
+                color: #ffffff !important; /* Light text for dark mode */
+            }
+        }
+    </style>
+    """, unsafe_allow_html=True)
+    
+    # Theme-adaptive text
     st.markdown("""
     <div style="text-align: center; margin: 20px 0;">
-        <h2 style="color: white; margin-bottom: 5px;">Marketing Dashboard</h2>
-        <p style="font-size: 14px; color: #ddd;">Data-driven insights</p>
+        <h2 style="color: var(--text-color, #262730); margin-bottom: 5px;">Marketing Dashboard</h2>
+        <p style="font-size: 14px; color: var(--text-color-secondary, #424242);">Data-driven insights</p>
     </div>
     """, unsafe_allow_html=True)
     
